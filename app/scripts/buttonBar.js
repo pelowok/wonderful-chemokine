@@ -1,15 +1,12 @@
-/**
- * Created by zp on 10/25/2015.
- */
 function vidplay() {
     var video = document.getElementById("Video1");
     var button = document.getElementById("play");
     if (video.paused) {
         video.play();
-        button.textContent = "||";
+        button.textContent = "PAUSE";
     } else {
         video.pause();
-        button.textContent = ">";
+        button.textContent = "PLAY";
     }
 }
 

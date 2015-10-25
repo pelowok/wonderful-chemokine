@@ -20,7 +20,7 @@
   </head>
   <body ng-app="appInfi">
 
-    <div class="promo">
+    <div ng-controller="mainController" class="promo">
 
       <video id="Video1" autoplay="autoplay">
         <source src="video/Infinity_IPI145_Animation_EN_08a_1080p.mp4" type="video/mp4">
@@ -42,19 +42,24 @@
 
     </div>
 
-
-
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="/bower_components/angular/angular.min.js"></script>
-    <script src="/bower_components/angular-touch/angular-touch.min.js"></script>
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->
-    <script src="scripts/modules/module_myApp.js"></script>
+
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.min.js"></script>
+    <script src="/bower_components/videogular/videogular.js"></script>
+    <script src="/bower_components/videogular-controls/vg-controls.js"></script>
+    <script src="/bower_components/videogular-overlay-play/vg-overlay-play.js"></script>
+    <script src="/bower_components/videogular-poster/vg-poster.js"></script>
+    <script src="/bower_components/videogular-buffering/vg-buffering.js"></script>
     <script src="scripts/main.js"></script>
+
     <!--<script src="scripts/buttonBar.js"></script>-->
     <!-- endbuild -->
 
