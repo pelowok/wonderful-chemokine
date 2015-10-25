@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>INFI</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="appInfi">
+
+    <div class="promo">
+
+      <video id="Video1" autoplay="autoplay">
+        <source src="video/Infinity_IPI145_Animation_EN_08a_1080p.mp4" type="video/mp4">
+        <!--<source src="assets/muffins.ogg" type="video/ogg">-->
+      </video>
+
+      <!--<img src="assets/logo.svg">-->
+
+      <div class="caption">
+        <p>Lorem Ipsum Sit Amet Dolor</p>
+      </div>
+
+      <div id="buttonbar">
+        <button id="restart" onclick="restart();">Restart</button>
+        <button id="rew" onclick="skip(-10)">REW</button>
+        <button id="play" onclick="vidplay()">PAUSE</button>
+        <button id="fastFwd" onclick="skip(10)">FWD</button>
+      </div>
+
+    </div>
+
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.min.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/modules/module_myApp.js"></script>
+    <script src="scripts/main.js"></script>
+    <!--<script src="scripts/buttonBar.js"></script>-->
+    <!-- endbuild -->
+
+  </body>
+</html>

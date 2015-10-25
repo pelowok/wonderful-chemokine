@@ -1,0 +1,57 @@
+// bower:scss
+// endbower
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,900);
+//@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+
+$font-stack: "Roboto", Arial, sans-serif;
+
+body {
+  background: #45180a;
+  font-family: $font-stack;
+  color: #333;
+}
+
+.promo {
+  margin: 40px;
+  font-size: 16px;
+  font-family: $font-stack ;
+  font-weight: 900;
+}
+
+.promo video {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -10;
+}
+
+.promo img {
+  width: 160px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  margin-left: -80px;
+}
+
+.promo .caption {
+  position: absolute;
+  left: 1px;
+  bottom: 60px;
+  background-color: rgba(200,100,200,0.5);
+  width: 100%;
+}
+
+.promo .caption p {
+  font-size: 6em;
+  margin: 0;
+  padding: 0 1em;
+  text-align: center;
+  color: #fff;
+  //border-top: 1px solid #fff;
+  //border-bottom: 1px solid #fff;
+}
