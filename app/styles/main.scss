@@ -14,14 +14,14 @@ body {
   padding: 0;
 }
 
-.promo {
+.attractVideo {
   margin: 40px;
   font-size: 16px;
   font-family: $font-stack ;
   font-weight: 900;
 }
 
-.promo video {
+.attractVideo video {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -34,15 +34,19 @@ body {
   overflow: hidden;
 }
 
-.promo img {
-  width: 160px;
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  margin-left: -80px;
+.invisible-screen {
+  position: fixed;
+  background-color: rgba(100,0,0,0.25);
+  width: 1920px;
+  height: 1080px;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  margin: 0;
+  padding: 0;
 }
 
-.promo .caption {
+.attractVideo .caption {
   position: absolute;
   left: 1px;
   bottom: 60px;
@@ -50,13 +54,19 @@ body {
   width: 100%;
 }
 
-.promo .caption p {
+.attractVideo .caption p {
   font-size: 6em;
   margin: 0;
   padding: 0 1em;
   text-align: center;
   color: #fff;
-  //border-top: 1px solid #fff;
-  //border-bottom: 1px solid #fff;
+}
+
+.btnMainMenu {
+  float: left;
+  padding: 40px;
+  width: 200px;
+  height: auto;
+  z-index: 20;
 }
 

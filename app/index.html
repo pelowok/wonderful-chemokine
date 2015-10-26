@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="">
+<html lang="" ng-app="infiApp">
   <head>
     <meta charset="utf-8">
     <title>INFI</title>
@@ -16,44 +16,34 @@
   </head>
   <body>
 
-  <div ng-app="myApp">
+    <div ui-view></div>
 
-    <div ng-controller="HomeCtrl as controller" class="promo" ng-click="launchScreen()">
-
-      <videogular vg-player-ready="controller.onPlayerReady($API)"
-                  vg-theme="controller.config.theme"
-                  vg-auto-play="controller.config.autoPlay">
-
-        <vg-media vg-src="controller.config.sources"></vg-media>
-
-        <vg-poster vg-url='controller.config.plugins.poster'></vg-poster>
-
-      </videogular>
-
-    </div>
-
-  </div>
+  <!--<div ng-app="myApp">-->
+    <!--<div ng-controller="HomeCtrl as controller" class="promo"">-->
+      <!--<videogular vg-player-ready="controller.onPlayerReady($API)"-->
+                  <!--vg-theme="controller.config.theme"-->
+                  <!--vg-auto-play="controller.config.autoPlay">-->
+        <!--<vg-media vg-src="controller.config.sources"></vg-media>-->
+        <!--<vg-poster vg-url='controller.config.plugins.poster'></vg-poster>-->
+      <!--</videogular>-->
+    <!--</div>-->
+  <!--</div>-->
 
     <!--<div class="promo">-->
-
       <!--<video id="Video1" autoplay="autoplay">-->
         <!--<source src="video/Infinity_IPI145_Animation_EN_08a_1080p.mp4" type="video/mp4">-->
         <!--&lt;!&ndash;<source src="assets/muffins.ogg" type="video/ogg">&ndash;&gt;-->
       <!--</video>-->
-
       <!--&lt;!&ndash;<img src="assets/logo.svg">&ndash;&gt;-->
-
       <!--<div class="caption">-->
         <!--<p>Lorem Ipsum Sit Amet Dolor</p>-->
       <!--</div>-->
-
       <!--<div id="buttonbar">-->
         <!--<button id="restart" onclick="restart();">Restart</button>-->
         <!--<button id="rew" onclick="skip(-10)">REW</button>-->
         <!--<button id="play" onclick="vidplay()">PAUSE</button>-->
         <!--<button id="fastFwd" onclick="skip(10)">FWD</button>-->
       <!--</div>-->
-
     <!--</div>-->
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -62,10 +52,11 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:js scripts/main.js -->
+    <!-- build:js scripts/main_OLD.js -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="/bower_components/angular-touch/angular-touch.min.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-animate.min.js"></script>
 
     <script src="/bower_components/videogular/videogular.js"></script>
@@ -75,6 +66,7 @@
     <script src="/bower_components/videogular-buffering/vg-buffering.js"></script>
 
     <script src="scripts/main.js"></script>
+    <script src="scripts/controllers.js"></script>
 
     <!--<script src="scripts/buttonBar.js"></script>-->
     <!-- endbuild -->
