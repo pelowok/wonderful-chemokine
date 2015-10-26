@@ -7,9 +7,11 @@
 $font-stack: "Roboto", Arial, sans-serif;
 
 body {
-  background: #45180a;
+  background: #000000;
   font-family: $font-stack;
   color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 .promo {
@@ -28,6 +30,8 @@ body {
   width: auto;
   height: auto;
   z-index: -10;
+  margin: auto;
+  overflow: hidden;
 }
 
 .promo img {
@@ -55,3 +59,4 @@ body {
   //border-top: 1px solid #fff;
   //border-bottom: 1px solid #fff;
 }
+
