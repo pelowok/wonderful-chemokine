@@ -31,8 +31,27 @@ controllers.AttractController = function($sce, $scope, $interval, $state){
     };
 
     $scope.navTo = function(page){
-        console.log('potato');
         $state.transitionTo(page);
+    }
+
+    $scope.checkAttractTime = function($currentTime, $duration){
+
+        if(Math.round($currentTime) === 6){
+
+           var foo =  document.getElementsByTagName('video');
+
+            foo.pause();
+
+            //$state.transitionTo('mainmenu');
+
+        } else {
+            console.log($currentTime);
+        }
+
+    }
+
+    $scope.restartAttract = function(){
+        $state.transitionTo('attract');
     }
 };
 

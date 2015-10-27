@@ -21,11 +21,13 @@ infiApp.config( function ( $stateProvider, $urlRouterProvider ) {
 
     $stateProvider
         .state('mainmenu', {
+            controller: 'MainController',
             url: '/mainmenu',
             templateUrl: '/partials/mainmenu.html'
         })
 
         .state('attract', {
+            controller: 'AttractController',
             url: '/attract',
             templateUrl: '/partials/attract.html',
             onEnter: function() {
@@ -39,9 +41,10 @@ infiApp.config( function ( $stateProvider, $urlRouterProvider ) {
                     elapsed = Math.floor(time / 100) / 10;
                     if(Math.round(elapsed) == elapsed) { elapsed += '.0' }
 
-                    if(elapsed == 25) {
+                    if(elapsed == 18) {
 
                         document.title = elapsed;
+
                     }
 
                 }, 100);
