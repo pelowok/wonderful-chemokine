@@ -8,7 +8,7 @@
 <div data-ng-controller="MainController" class="splash-menu-container">
     <div class="splash-menu">
         <span data-ng-repeat="obj in btnImg">
-            <img class="btn-menu btn-main-menu" data-ng-src={{obj.img}} data-ng-click="navTo('attract')">
+            <img class="btn-menu btn-main-menu" data-ng-src={{obj.img}} data-ng-click="navTo( '{{obj.state}}' )">
         </span>
     </div>
 </div>

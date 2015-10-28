@@ -1,0 +1,68 @@
+<div class="full-width-container" data-ng-controller="QuizController">
+	<div class="align-center">
+
+		<div id="myQuiz">
+			
+			<h4>
+				<span>Test your knowledge:</span>
+
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam cum debitis eius.
+			</h4>
+
+
+
+			<div class="progress">
+				<div class="
+				{{ ( $index === activeQuestion) ? 'on' : 'off' }} 
+				{{ (myQuestion.questionState === 'answered') ? 'answered' : 'unanswered' }}
+				{{ (myQuestion.correctness === 'correct') ? 'correct' : 'incorrect' }}" 
+				ng-repeat="myQuestion in myQuestions"></div>
+			</div>
+
+			<div class="intro {{ (activeQuestion > -1) ? 'inactive' : 'active' }}">
+				<h2>Chapter 1</h2>
+				<p>Click Begin to test your knowledge</p>
+				<p class="btn" ng-click="activeQuestion = 0">Begin</p>
+			</div>
+
+			<div class="question
+				{{ $index === activeQuestion ? 'active' : 'inactive' }} 
+				{{ myQuestion.questionState === 'answered' ? 'answered' : 'unanswered' }} "
+				ng-repeat="myQuestion in myQuestions">
+				
+				<p class="txt">{{ myQuestion.question }}</p>
+				<p class="ans" 
+				ng-class="{ 
+					image:Answer.image,
+					selected:isSelected($parent.$index, $index), 
+					correct:isCorrect($parent.$index, $index) 
+				}"
+				ng-style="{ 'background-image':'url( {{ Answer.image }} )' }"
+				ng-click="selectAnswer( $parent.$index, $index )" 
+				ng-repeat="Answer in myQuestions[$index].answers">
+				{{ Answer.text }}
+				</p>
+				<div class="feedback">
+					<p ng-show="myQuestion.correctness === 'correct'">You are <strong>correct</strong>.</p>
+					<p ng-show="myQuestion.correctness === 'incorrect'">Oops! That was not correct.</p>
+					<p>{{ myQuestion.feedback }}</p>
+					<div class="btn" ng-click="selectContinue()">Continue</div>
+				</div>
+
+			</div>
+
+			<!--<div class="results {{ (totalQuestions === activeQuestion) ? 'active' : 'inactive' }} ">-->
+				<!-- -->
+				<!--<h3>Results</h3>-->
+				<!--<p>You scored {{ percentage }}% by correctly answering {{ score }} of the total {{ totalQuestions }} questions.</p>-->
+				<!--<p>Use the links below to challenge your friends.</p>-->
+
+				<!--<div class="share" ng-bind-html="createShareLinks(percentage)">-->
+					<!-- -->
+				<!--</div>-->
+
+			<!--</div>-->
+
+		</div>
+	</div>
+</div>
