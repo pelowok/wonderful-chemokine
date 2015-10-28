@@ -11,7 +11,8 @@ var infiApp = angular.module('infiApp',
         'com.2fdevs.videogular',
         'com.2fdevs.videogular.plugins.controls',
         'com.2fdevs.videogular.plugins.overlayplay',
-        'com.2fdevs.videogular.plugins.poster'
+        'com.2fdevs.videogular.plugins.poster',
+        'com.2fdevs.videogular.plugins.buffering'
     ]
 );
 
@@ -21,34 +22,23 @@ infiApp.config( function ( $stateProvider, $urlRouterProvider ) {
 
     $stateProvider
         .state('mainmenu', {
-            controller: 'MainController',
             url: '/mainmenu',
-            templateUrl: '/partials/mainmenu.html'
+            views: {
+                '': {
+                    templateUrl: '/partials/bigblueball.html'
+                },
+                'overlay1': {
+                    templateUrl: '/partials/mainmenu.html'
+                }
+            }
         })
 
         .state('attract', {
-            controller: 'AttractController',
             url: '/attract',
-            templateUrl: '/partials/attract.html',
-            onEnter: function() {
-                var time = 0,
-                    elapsed = '0.0';
-
-                window.setInterval(function($state)
-                {
-                    time += 100;
-
-                    elapsed = Math.floor(time / 100) / 10;
-                    if(Math.round(elapsed) == elapsed) { elapsed += '.0' }
-
-                    if(elapsed == 18) {
-
-                        document.title = elapsed;
-
-                    }
-
-                }, 100);
+            views: {
+                '': {
+                    templateUrl: '/partials/attract.html'
+                }
             }
         });
-
 });

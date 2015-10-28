@@ -1,6 +1,14 @@
-<!--<div data-ng-controller="MainController as controller">-->
-<div>
-    <div data-ng-repeat="obj in btnImg">
-        <img class="btnMainMenu" data-ng-src={{obj.img}} data-ng-click="navTo('attract')">
+
+<div id="container">
+    <canvas id="myCanvas" width="1920 " height="1080">
+
+    </canvas>
+</div>
+
+<div data-ng-controller="MainController" class="splash-menu-container">
+    <div class="splash-menu">
+        <span data-ng-repeat="obj in btnImg">
+            <img class="btn-menu btn-main-menu" data-ng-src={{obj.img}} data-ng-click="navTo('attract')">
+        </span>
     </div>
 </div>

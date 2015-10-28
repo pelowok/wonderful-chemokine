@@ -1,7 +1,3 @@
-/**
- * Created by zp on 10/26/2015.
- */
-
 infiApp.directive('bigblueball', function() {
 
     return {
@@ -9,7 +5,7 @@ infiApp.directive('bigblueball', function() {
         template: '<div class="bigBlueBall"></div>',
         link: function () {
 
-            console.log('bigblueball potato');
+            console.log('bigblueball directive');
 
             var mainCanvas = document.querySelector("#myCanvas");
             var mainContext = mainCanvas.getContext("2d");
