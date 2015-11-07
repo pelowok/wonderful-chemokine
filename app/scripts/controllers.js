@@ -38,7 +38,7 @@ arrControllers.AttractController = function($sce, $scope, $interval, $state) {
     $scope.attractConfig = {
         sources: [
             {
-                src: $sce.trustAsResourceUrl("/video/Infinity_IPI145_Animation_EN_08a_1080p_2.mp4"),
+                src: $sce.trustAsResourceUrl("/video/attract.mp4"),
                 type: "video/mp4",
                 ngClick: "navTo('attractpause')"
             }
