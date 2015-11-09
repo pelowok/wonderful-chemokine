@@ -1,14 +1,27 @@
+<div data-ng-controller="MainMenuController">
 
-<div id="container">
-    <canvas id="myCanvas" width="1920 " height="1080">
+    <div id="container">
+        <div>
+            <videogular data-vg-player-ready="onPlayerReady($API)"
+                        data-vg-theme="mainmenuConfig.theme"
+                        data-vg-auto-play="mainmenuConfig.autoPlay"
+                        data-vg-complete="restart()"
+                        data-vg-update-time="checkTime($currentTime,$duration)">
 
-    </canvas>
-</div>
+                <vg-media data-vg-src="mainmenuConfig.sources"></vg-media>
+            </videogular>
+        </div>
+        <!--<canvas id="myCanvas" width="1920 " height="1080">-->
 
-<div data-ng-controller="MainController" class="splash-menu-container">
-    <div class="splash-menu">
+        <!--</canvas>-->
+    </div>
+
+    <div class="splash-menu-container" data-ng-show="menuactive">
+        <div class="splash-menu">
         <span data-ng-repeat="obj in btnImg">
             <img class="btn-menu btn-main-menu" data-ng-src={{obj.img}} data-ng-click="navTo( '{{obj.state}}' )">
         </span>
+        </div>
     </div>
 </div>
+

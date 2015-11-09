@@ -2,7 +2,6 @@
 // endbower
 
 @import url(http://fonts.googleapis.com/css?family=Roboto:100,400,900);
-//@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
 
 $font-stack: "Roboto", Arial, sans-serif;
 
@@ -28,6 +27,19 @@ body {
   width: auto;
   height: auto;
   z-index: -10;
+  margin: auto;
+  overflow: hidden;
+}
+
+.full-width-container-top {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 10;
   margin: auto;
   overflow: hidden;
 }
@@ -92,36 +104,35 @@ canvas {
 }
 // MENUS
 .btn-menu {
-  width: 200px;
-  height: auto;
+  width: 450px;
+  height: 450px;
   z-index: 30;
 }
 
 .btn-main-menu {
-  padding: 100px 100px;
-
+  padding: 0 65px 15px 65px;
 }
 
 .splash-menu-container {
   position: fixed;
   left: 0;
-  bottom: 0;
+  top: 0;
   min-width: 100%;
   min-height: 100%;
   width: auto;
   height: auto;
   z-index: 30;
-  margin: auto;
   overflow: hidden;
-}
 
+}
+//
 .splash-menu {
-  display: block;
   text-align: center;
-  width: 1000px;
+  width: 1400px;
   margin: auto;
   margin-top: 100px;
   z-index: 30;
+  overflow: hidden;
 }
 
 .side-menu {
@@ -129,6 +140,10 @@ canvas {
   width: 210px;
   padding: 10px;
   margin-top: 200px;
+}
+
+.delayed10 {
+
 }
 
 #myQuiz {

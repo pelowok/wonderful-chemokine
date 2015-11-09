@@ -1,25 +1,24 @@
 <div data-ng-controller="AttractController">
-
     <div>
-
         <videogular data-vg-player-ready="onPlayerReady($API)"
                     data-vg-theme="attractConfig.theme"
                     data-vg-auto-play="attractConfig.autoPlay"
                     data-vg-complete="restartAttract()">
+                    <!--data-vg-update-time="checkAttractTime($currentTime,$duration)"-->
 
             <vg-media data-vg-src="attractConfig.sources"></vg-media>
-
+            <!--<div>-->
+            <!--<img class="invisible-screen" src="/images/blank.png" data-ng-click="navTo('mainmenu')">-->
+            <!--</div>-->
+            <!--<div class="caption">-->
+            <!--<p>Touch to explore</p>-->
+            <!--</div>-->
         </videogular>
-
         <div id="container">
-
             <canvas id="myCanvas" width="1920 " height="1080" ng-click="navTo('mainmenu')">
 
             </canvas>
-
         </div>
-
     </div>
-
 </div>
 

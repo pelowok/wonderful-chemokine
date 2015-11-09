@@ -1,18 +1,67 @@
-/**
- * Created by zp on 10/26/2015.
- */
-
 var arrControllers = {};
 
-arrControllers.MainController = function($scope, $state) {
+arrControllers.MainMenuController = function($scope, $state, $sce) {
 
-    console.log('MainController fired');
+    console.log('MainMenuController fired');
+
+    $scope.API = null;
+
+    $scope.onPlayerReady = function ($API) {
+        console.log('onPlayerReady fired');
+        $scope.$API = $API;
+        $API.seekTime(3);
+    };
+
+    $scope.mainmenuConfig = {
+        sources: [
+            {
+                src: $sce.trustAsResourceUrl("/video/mainmenu.mp4"),
+                type: "video/mp4"
+            }
+        ],
+        theme: "/bower_components/videogular-themes-default/videogular.css",
+        plugins: {
+            poster: "http://www.videogular.com/assets/images/videogular.png"
+        },
+        autoPlay: true
+    };
+
+    $scope.checkTime = function ($currentTime, $API) {
+
+        var currentTime = Math.round($currentTime);
+
+        console.log(currentTime);
+
+        if (currentTime >= 9 && currentTime <=25) {
+            $scope.menuactive = true;
+            console.log('Math.round($currenttime) reached 9 : menu active : ' + currentTime);
+        } else {
+            $scope.menuactive = false;
+            console.log('Math.round($currenttime) reached 25 : menu inactive : ' + currentTime);
+        }
+
+        //if (currentTime === 25) {
+        //    $scope.menuactive = false;
+        //    console.log('Math.round($currenttime) reached 25 : menu inactive : ' + currentTime);
+        //}
+
+        //if (currentTime === 25) {
+        //    $scope.$API.pause();
+        //    console.log('Math.round($currenttime) reached 25 : ' + currentTime);
+        //}
+    };
+
+    $scope.restart = function () {
+        console.log('$scope.restartfired');
+        //$scope.$API.play();
+        $scope.navTo('attract');
+    };
 
     $scope.btnImg = [
-        { btn: 'mm_s1', img: '/images/mainmenu_btnScene1.png', state: 'ch11' },
-        { btn: 'mm_s2', img: '/images/mainmenu_btnScene2.png', state: 'ch21' },
-        { btn: 'mm_s3', img: '/images/mainmenu_btnScene3.png', state: 'ch31' },
-        { btn: 'mm_s4', img: '/images/mainmenu_btnScene4.png', state: 'ch41' }
+        { btn: 'mm_s1', img: '/images/red.png', state: 'c1.q0' },
+        { btn: 'mm_s2', img: '/images/red.png', state: 'ch21' },
+        { btn: 'mm_s3', img: '/images/red.png', state: 'ch31' },
+        { btn: 'mm_s4', img: '/images/red.png', state: 'ch41' }
     ];
 
     $scope.navTo = function(state){
@@ -40,7 +89,7 @@ arrControllers.AttractController = function($sce, $scope, $interval, $state) {
             {
                 src: $sce.trustAsResourceUrl("/video/attract.mp4"),
                 type: "video/mp4",
-                ngClick: "navTo('attractpause')"
+                ngClick: "navTo('mainmenu')"
             }
         ],
         theme: "/bower_components/videogular-themes-default/videogular.css",
@@ -55,19 +104,24 @@ arrControllers.AttractController = function($sce, $scope, $interval, $state) {
     };
 
     $scope.checkAttractTime = function ($currentTime, $duration) {
-        if (Math.round($currentTime) === 25) {
+
+        var currentTime = Math.round($currentTime);
+
+        console.log(currentTime);
+
+        if (currentTime === 30) {
             $scope.$API.pause();
-            console.log('$state : ' + $state);
+            console.log('Math.round($currenttime) reached 30 : ' + currentTime);
             $state.transitionTo('attractpause');
         }
     };
 
     $scope.restartAttract = function () {
         console.log('$scope.restartAttract fired');
-        $state.transitionTo('attractplay');
+        //$scope.$API.play();
+        $state.transitionTo('mainmenu');
     };
 
-//}]);
 };
 
 arrControllers.BigBlueBallController = function($scope, $state) {
@@ -104,14 +158,79 @@ arrControllers.BigBlueBallController = function($scope, $state) {
 
 }
 
-arrControllers.Ch11Controller = function($scope, $state, $sce) {
+arrControllers.Ch11Controller  = function($scope, $state, $sce) {
 
-    console.log('Ch11Controller assigned');
+    console.log('Ch11Controller fired');
 
-    $scope.navTo = function (page) {
-        $state.transitionTo(page);
+    $scope.API = null;
+
+    $scope.onPlayerReady = function ($API) {
+        console.log('onPlayerReady fired');
+        $scope.$API = $API;
     };
+
+    $scope.config = {
+        sources: [
+            {
+                src: $sce.trustAsResourceUrl("/video/ch1.mp4"),
+                type: "video/mp4"
+            }
+        ],
+        autoPlay: true
+    };
+
+    $scope.complete = function () {
+        console.log('$scope.complete fired. $state.includes(c1) : ' + $state.includes('c1'));
+        //$scope.$API.clearMedia();
+        $scope.$API.play();
+        $state.go('c1.q1');
+    };
+
 }
+//arrControllers.Ch11Controller  = function($scope, $state, $sce) {
+//
+//    console.log('Ch11Controller fired');
+//
+//    $scope.API = null;
+//
+//    $scope.onPlayerReady = function ($API) {
+//        console.log('onPlayerReady fired');
+//        $scope.$API = $API;
+//    };
+//
+//    $scope.config = {
+//        sources: [
+//            {
+//                src: $sce.trustAsResourceUrl("/video/ch1.mp4"),
+//                type: "video/mp4"
+//            }
+//        ],
+//        theme: "/bower_components/videogular-themes-default/videogular.css",
+//        plugins: {
+//            poster: "http://www.videogular.com/assets/images/videogular.png"
+//        },
+//        autoPlay: true
+//    };
+//
+//    $scope.playedOnce = false;
+//
+//    $scope.complete = function () {
+//        console.log('$scope.complete fired');
+//        $scope.$API.play();
+//        //$state.go('ch11.2', {reload:false});
+//        //$state.go('ch12');
+//        if(!$scope.playedOnce){
+//            $scope.playedOnce = true;
+//            console.log('CHANGE STATE TO SHOW QUIZ NOW');
+//            $state.transitionTo('c1.q1');
+//        }
+//    };
+//
+//    $scope.navTo = function(state){
+//        console.log('$scope.navTo(state) : ' + state);
+//        $state.go(state);
+//    }
+//}
 
 arrControllers.Ch12Controller = function($scope, $state, $sce) {
 
@@ -122,13 +241,12 @@ arrControllers.Ch12Controller = function($scope, $state, $sce) {
     $scope.onPlayerReady = function ($API) {
         console.log('onPlayerReady fired');
         $scope.$API = $API;
-        $API.seekTime(25);
     };
 
     $scope.config = {
         sources: [
             {
-                src: $sce.trustAsResourceUrl("/video/Infinity_IPI145_Animation_EN_08a_1080p_2.mp4"),
+                src: $sce.trustAsResourceUrl("/video/ch1.mp4"),
                 type: "video/mp4"
             }
         ],
@@ -143,12 +261,9 @@ arrControllers.Ch12Controller = function($scope, $state, $sce) {
         $state.transitionTo(page);
     };
 
-    $scope.checkAttractTime = function ($currentTime, $duration) {
-        console.log($currentTime);
-        if (Math.round($currentTime) === 60) {
-            $scope.$API.pause();
-            $state.transitionTo('ch13');
-        }
+    $scope.complete = function () {
+        console.log('$scope.complete fired');
+        $scope.$API.play();
     };
 
 }
@@ -165,7 +280,7 @@ arrControllers.QuizController = function ($scope,$http,$sce) {
     $http.get('../quiz_data.json').then( function(quizData) {
         // $http.get('http://mynameiszak.com/sandbox/quiz/quiz_data.json').then( function(quizData) {
 
-        console.log('potato');
+        console.log('QuizController fired');
 
         $scope.myQuestions = quizData.data;
         $scope.totalQuestions = $scope.myQuestions.length;

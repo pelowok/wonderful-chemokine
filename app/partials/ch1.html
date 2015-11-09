@@ -1,5 +1,7 @@
-<div data-ng-controller="Ch12Controller">
-    <div>
+<div class="full-width-container">
+
+    <div data-ng-controller="Ch11Controller">
+
         <videogular data-vg-player-ready="onPlayerReady($API)"
                     data-vg-theme="config.theme"
                     data-vg-auto-play="config.autoPlay"
@@ -10,9 +12,20 @@
         </videogular>
 
         <div id="container">
-            <canvas id="myCanvas" width="1920 " height="1080" ng-click="navTo('ch13')">
+
+            <canvas id="myCanvas" width="1920 " height="1080")>
+            <!--<canvas id="myCanvas" width="1920 " height="1080" ng-click="navTo('c1.2')">-->
 
             </canvas>
+
         </div>
+
     </div>
+
+    <!-- END ch11-controller -->
+
+    <div>
+        <div ui-view="chaptersection"></div>
+    </div>
+
 </div>

@@ -24,7 +24,16 @@ infiApp.config( function ( $stateProvider, $urlRouterProvider ) {
         .state('mainmenu', {
             url: '/mainmenu',
             views: {
-                '': {
+                'main': {
+                    templateUrl: '/partials/mainmenu.html'
+                }
+            }
+        })
+
+        .state('OLDmainmenu', {
+            url: '/oldmainmenu',
+            views: {
+                'main': {
                     templateUrl: '/partials/bigblueball.html'
                 },
                 'overlay1': {
@@ -33,10 +42,10 @@ infiApp.config( function ( $stateProvider, $urlRouterProvider ) {
             }
         })
 
-        .state('attractplay', {
+        .state('attract', {
             url: '/attract',
             views: {
-                '': {
+                'main': {
                     templateUrl: '/partials/attract.html'
                 }
             }
@@ -45,7 +54,7 @@ infiApp.config( function ( $stateProvider, $urlRouterProvider ) {
         .state('attractpause', {
             url: '/attract',
             views: {
-                '': {
+                'main': {
                     templateUrl: '/partials/attract.html'
                 },
                 'overlay1': {
@@ -57,60 +66,25 @@ infiApp.config( function ( $stateProvider, $urlRouterProvider ) {
             }
         })
 
-        .state('ch11', {
-            url: '/ch11',
+        .state('c1', {
             views: {
-                '': {
+                'main': {
                     templateUrl: '/partials/ch1-1.html'
                 }
             }
         })
 
-        .state('ch12', {
-            url: '/ch12',
-            views: {
-                '': {
-                    templateUrl: '/partials/ch1-2.html'
-                }
-            }
+        .state('c1.q0', {
+            url: '/q0'
         })
 
-        .state('ch13', {
-            url: '/ch13',
+        .state('c1.q1', {
+            url: '/q1',
             views: {
-                '': {
-                    templateUrl: '/partials/ch1-3.html'
-                },
-                'overlay1': {
+                'main': {
                     templateUrl: '/partials/quiz1.html'
                 }
             }
-        })
-
-        .state('ch21', {
-            url: '/ch21',
-            views: {
-                '': {
-                    templateUrl: '/partials/ch2-1.html'
-                }
-            }
-        })
-
-        .state('ch31', {
-            url: '/ch31',
-            views: {
-                '': {
-                    templateUrl: '/partials/ch3-1.html'
-                }
-            }
-        })
-
-        .state('ch41', {
-            url: '/ch41',
-            views: {
-                '': {
-                    templateUrl: '/partials/ch4-1.html'
-                }
-            }
         });
+
 });
