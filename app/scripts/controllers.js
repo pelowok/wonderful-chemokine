@@ -1,8 +1,24 @@
 var arrControllers = {};
 
+arrControllers.MainController = function($scope, $state){
+
+    $scope.partThisIs = 0;
+
+    $scope.whatPartIsThis = function(guess){
+        console.log('$scope.partThisIs : ' + $scope.partThisIs);
+        console.log('$scope.whatPartIsThis(guess) : ' + guess);
+        if(guess === $scope.partThisIs){
+            return true;
+        }
+    }
+
+
+};
+
 arrControllers.MainMenuController = function($scope, $state, $sce) {
 
     console.log('MainMenuController fired');
+
 
     $scope.API = null;
 
@@ -71,7 +87,6 @@ arrControllers.MainMenuController = function($scope, $state, $sce) {
 };
 
 arrControllers.AttractController = function($sce, $scope, $interval, $state) {
-//infiApp.controller('AttractController', ['$scope', '$sce', '$state', function ($scope, $sce, $state) {
 
     console.log('AttractController assigned');
 
@@ -126,6 +141,8 @@ arrControllers.AttractController = function($sce, $scope, $interval, $state) {
 
 arrControllers.BigBlueBallController = function($scope, $state) {
 
+
+
     $scope.navTo = function (page) {
         $state.transitionTo(page);
     };
@@ -167,6 +184,9 @@ arrControllers.C1Controller  = function($scope, $state, $sce) {
     $scope.currentState = 'A';
     $scope.foo = true;
 
+    $scope.configCounter = 0;
+
+
     $scope.doStuff = function(toState) {
         $scope.currentState = toState;
         console.log($scope.currentState);
@@ -179,24 +199,58 @@ arrControllers.C1Controller  = function($scope, $state, $sce) {
         $scope.$API = $API;
     };
 
+    $scope.videos = [
+        {
+            sources: [
+                { src: $sce.trustAsResourceUrl("/video/transition1.mp4"), type: "video/mp4" }
+            ]
+        },
+        {
+            sources: [
+                { src: $sce.trustAsResourceUrl("/video/bgloop1.mp4"), type: "video/mp4" }
+            ]
+        },
+        {
+            sources: [
+                { src: $sce.trustAsResourceUrl("/video/teaser1.mp4"), type: "video/mp4" }
+                //{ src: $sce.trustAsResourceUrl("/video/teaser1.mp4"), type: "video/mp4" }
+            ]
+        },
+        {
+            sources: [
+                { src: $sce.trustAsResourceUrl("/video/bgloop1.mp4"), type: "video/mp4" }
+                //{ src: $sce.trustAsResourceUrl("/video/segment1.mp4"), type: "video/mp4" }
+            ]
+        }
+    ];
+
     $scope.config = {
-        sources: [
-            {
-                src: $sce.trustAsResourceUrl("/video/blur2.mp4"),
-                type: "video/mp4"
-            }
-        ],
+        sources: $scope.videos[0].sources,
         autoPlay: true
+    }
+
+    $scope.setVideo = function (videosIndex) {
+        console.log('$scope.complete fired. $state.includes(c1) : ' + $state.includes('c1'));
+        if(videosIndex){
+            $scope.config.sources = $scope.videos[videosIndex].sources;
+        } else {
+            $scope.config.sources = $scope.videos[$scope.configCounter].sources;
+        }
+
+        $scope.$API.play();
     };
 
     $scope.complete = function () {
-        console.log('$scope.complete fired. $state.includes(c1) : ' + $state.includes('c1'));
-        //$scope.$API.clearMedia();
-        $scope.$API.play();
-        $state.go('c1.q1');
+        console.log('$scope.config.sources : ' + $scope.config.sources.src);
+
+        $scope.configCounter += 1;
+
+        console.log('$scope.configCounter : ' + $scope. configCounter);
+
+        $scope.setVideo();
     };
 
-}
+};
 //arrControllers.Ch11Controller  = function($scope, $state, $sce) {
 //
 //    console.log('Ch11Controller fired');
@@ -243,6 +297,7 @@ arrControllers.C1Controller  = function($scope, $state, $sce) {
 //}
 
 arrControllers.Ch12Controller = function($scope, $state, $sce) {
+
 
     console.log('Ch12Controller assigned');
 

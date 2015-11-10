@@ -60,3 +60,4 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
             }
         });
 });
+
