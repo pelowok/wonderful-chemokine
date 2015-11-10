@@ -32,9 +32,9 @@ arrControllers.MainMenuController = function($scope, $state, $sce) {
 
         console.log(currentTime);
 
-        if (currentTime >= 9 && currentTime <=25) {
+        if (currentTime >= 6 && currentTime <=27) {
             $scope.menuactive = true;
-            console.log('Math.round($currenttime) reached 9 : menu active : ' + currentTime);
+            console.log('Math.round($currenttime) reached 4 : menu active : ' + currentTime);
         } else {
             $scope.menuactive = false;
             console.log('Math.round($currenttime) reached 25 : menu inactive : ' + currentTime);
@@ -58,7 +58,7 @@ arrControllers.MainMenuController = function($scope, $state, $sce) {
     };
 
     $scope.btnImg = [
-        { btn: 'mm_s1', img: '/images/red.png', state: 'c1.q0' },
+        { btn: 'mm_s1', img: '/images/red.png', state: 'c1' },
         { btn: 'mm_s2', img: '/images/red.png', state: 'ch21' },
         { btn: 'mm_s3', img: '/images/red.png', state: 'ch31' },
         { btn: 'mm_s4', img: '/images/red.png', state: 'ch41' }
@@ -158,9 +158,19 @@ arrControllers.BigBlueBallController = function($scope, $state) {
 
 }
 
-arrControllers.Ch11Controller  = function($scope, $state, $sce) {
+arrControllers.C1Controller  = function($scope, $state, $sce) {
 
-    console.log('Ch11Controller fired');
+    console.log('C1Controller fired');
+
+    var states = ['A', 'B'];
+    $scope.states = states;
+    $scope.currentState = 'A';
+    $scope.foo = true;
+
+    $scope.doStuff = function(toState) {
+        $scope.currentState = toState;
+        console.log($scope.currentState);
+    };
 
     $scope.API = null;
 
@@ -172,7 +182,7 @@ arrControllers.Ch11Controller  = function($scope, $state, $sce) {
     $scope.config = {
         sources: [
             {
-                src: $sce.trustAsResourceUrl("/video/ch1.mp4"),
+                src: $sce.trustAsResourceUrl("/video/blur2.mp4"),
                 type: "video/mp4"
             }
         ],

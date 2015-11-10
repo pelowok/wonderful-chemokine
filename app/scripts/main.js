@@ -16,7 +16,7 @@ var infiApp = angular.module('infiApp',
     ]
 );
 
-infiApp.config( function ( $stateProvider, $urlRouterProvider ) {
+infiApp.config(function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/attract');
 
@@ -25,18 +25,6 @@ infiApp.config( function ( $stateProvider, $urlRouterProvider ) {
             url: '/mainmenu',
             views: {
                 'main': {
-                    templateUrl: '/partials/mainmenu.html'
-                }
-            }
-        })
-
-        .state('OLDmainmenu', {
-            url: '/oldmainmenu',
-            views: {
-                'main': {
-                    templateUrl: '/partials/bigblueball.html'
-                },
-                'overlay1': {
                     templateUrl: '/partials/mainmenu.html'
                 }
             }
@@ -51,40 +39,24 @@ infiApp.config( function ( $stateProvider, $urlRouterProvider ) {
             }
         })
 
-        .state('attractpause', {
-            url: '/attract',
-            views: {
-                'main': {
-                    templateUrl: '/partials/attract.html'
-                },
-                'overlay1': {
-                    templateUrl: '/partials/bigblueball.html'
-                },
-                'overlay2': {
-                    templateUrl: '/partials/mainmenu.html'
-                }
-            }
-        })
-
         .state('c1', {
+            url: '/c1',
             views: {
                 'main': {
-                    templateUrl: '/partials/ch1-1.html'
-                }
-            }
-        })
-
-        .state('c1.q0', {
-            url: '/q0'
-        })
-
-        .state('c1.q1', {
-            url: '/q1',
-            views: {
-                'main': {
-                    templateUrl: '/partials/quiz1.html'
+                    templateUrl: '/partials/c1.html'
+                },
+                'layer1@c1': {
+                    templateUrl: '/partials/vid1.html',
+                    controller: 'C1Controller'
+                },
+                'layer2@c1': {
+                    templateUrl: 'partials/quiz1.html',
+                    controller: 'QuizController'
+                },
+                'layer3@c1': {
+                    templateUrl: 'partials/c1l2.html',
+                    controller: 'C1Controller'
                 }
             }
         });
-
 });
