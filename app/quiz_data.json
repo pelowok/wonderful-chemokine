@@ -1,6 +1,6 @@
 [
 	{
-		"question" : "Which non-neoplastic cells make up the malignant B cell tumor microenvironment?",
+		"question" : "",
 		"answers"   : [
 		  {"id"  : 0, "image" : "images/close_up_01.png" },
 		  {"id"  : 1, "image" : "images/close_up_02.png" },
@@ -11,7 +11,7 @@
 	  "feedback" : "Myeloid cells, T-cells, and stromal cells can all form part of the malignant B-cell tumor microenvironment.1."
 	},
 	{
-		"question" : "How many portatoes are we talking about, here?",
+		"question" : "",
 		"answers"  : [
 			{"id"  : 0, "image" : "images/close_up_01.png" },
 			{"id"  : 1, "image" : "images/close_up_02.png" },

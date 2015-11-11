@@ -146,18 +146,51 @@ canvas {
 
 }
 
-.quiz-container {
-  margin-top: 62px;
-}
 
-#myQuiz {
-  //font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 400;
-  width: 1578px;
-  height: 955px;
+
+.quiz {
+  width: 1920px;
+  height: 1080px;
   position:relative;
   overflow: hidden;
   color: #fff;
-  background: #000 url(../images/quizbackground.png) no-repeat 0px 0px;
+  margin: 0 auto;
+}
+#q1{
+  background: url(../images/q1.png) no-repeat 0px 0px;
+}
+
+.quiz .btn-container{
+  position: absolute;
+  display: inline-block;
+  left: 5500px;
+  top: 150px;
+  width: 700px;
+  height: 700px;
+  padding: 50px;
+  margin: 100px;
+}
+
+.quiz .btn {
+  //display: inline-block;
+  cursor: pointer;
+  padding: 5px 15px;
+  //border-radius: 8px;
+
+}
+
+
+
+
+
+#myQuiz {
+  //font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 400;
+  width: 1920px;
+  height: 1080px;
+  position:relative;
+  overflow: hidden;
+  color: #fff;
+  background: url(../images/q1.png) no-repeat 0px 0px;
   margin: 0 auto;
 }
 
@@ -184,22 +217,22 @@ canvas {
 }
 
 #myQuiz h4 {
-  text-transform: uppercase;
   margin: 0px;
   position: absolute;
   top: 25px;
-  left: 36px;
+  left: 50px;
   font-size: 1.6em;
   margin: 0px;
-  font-weight: 400;
+  font-weight: 200;
 }
 
 #myQuiz h4 span {
   display: block;
-  font-weight: 900;
+  font-weight: 300;
   font-family: 'Titillium Web', sans-serif;
   font-size: 2.2em;
   line-height: 65px;
+
 }
 
 #myQuiz p {
@@ -214,6 +247,7 @@ canvas {
   text-decoration: none;
   padding: 5px 15px;
   border-radius: 8px;
+  //display: none;
 }
 
 /* Progress BAr */
@@ -222,6 +256,7 @@ canvas {
   position: absolute;
   top: 40px;
   left: 420px;
+  display: none;
 }
 
 #myQuiz .progress div {
@@ -262,8 +297,8 @@ canvas {
 /*Intro*/
 #myQuiz .intro {
   position: absolute;
-  top: 225px;
-  left: 660px;
+  top: 50px;
+  left: 50px;
   width: 550px;
 }
 #myQuiz .intro p {
@@ -275,7 +310,7 @@ canvas {
   width: 550px;
   position: absolute;
   top: 225px;
-  left: 660px;
+  left: 2060px;
 }
 
 #myQuiz .question .txt {
@@ -286,9 +321,10 @@ canvas {
 #myQuiz .question .ans {
   display: inline-block;
   font-size: 1.1em;
-  width: 225px;
-  border: 2px solid rgba(238,189,102,0.4);
-  border-radius: 8px;
+  width: 235px;
+  height: 235px;
+  border: 10px solid #FFFFFF;
+  border-radius: 150px;
   padding: 10px;
   margin: 0px 15px 15px 0px;
   position: relative;
@@ -399,7 +435,7 @@ canvas {
 }
 
 #myQuiz .active {
-  left: 40px;
+  left: 900px;
 }
 
 #myQuiz .intro.inactive, #myQuiz .inactive.answered {

@@ -4,21 +4,21 @@ arrControllers.MainController = function($scope, $state){
 
     $scope.partThisIs = 0;
 
-    $scope.whatPartIsThis = function(guess){
-        console.log('$scope.partThisIs : ' + $scope.partThisIs);
-        console.log('$scope.whatPartIsThis(guess) : ' + guess);
-        if(guess === $scope.partThisIs){
-            return true;
-        }
+    $scope.nextPart = function(){
+        $scope.partThisIs += 1;
     }
 
+    $scope.whatPartIsThis = function(guess){
+
+        return (guess === $scope.partThisIs);
+
+    }
 
 };
 
 arrControllers.MainMenuController = function($scope, $state, $sce) {
 
     console.log('MainMenuController fired');
-
 
     $scope.API = null;
 
@@ -184,9 +184,6 @@ arrControllers.C1Controller  = function($scope, $state, $sce) {
     $scope.currentState = 'A';
     $scope.foo = true;
 
-    $scope.configCounter = 0;
-
-
     $scope.doStuff = function(toState) {
         $scope.currentState = toState;
         console.log($scope.currentState);
@@ -234,20 +231,39 @@ arrControllers.C1Controller  = function($scope, $state, $sce) {
         if(videosIndex){
             $scope.config.sources = $scope.videos[videosIndex].sources;
         } else {
-            $scope.config.sources = $scope.videos[$scope.configCounter].sources;
+            $scope.config.sources = $scope.videos[$scope.partThisIs].sources;
         }
 
         $scope.$API.play();
     };
 
     $scope.complete = function () {
-        console.log('$scope.config.sources : ' + $scope.config.sources.src);
+        switch($scope.partThisIs){
+            case 0:
+                $scope.config.sources = $scope.videos[1].sources;
+                $scope.nextPart();
 
-        $scope.configCounter += 1;
-
-        console.log('$scope.configCounter : ' + $scope. configCounter);
-
-        $scope.setVideo();
+                //console.log('$scope.partThisIs : ' + $scope.partThisIs);
+                //$scope.$API.play();
+                $scope.setVideo();
+                break;
+            case 1:
+            case 2:
+                //console.log('$scope.partThisIs : ' + $scope.partThisIs);
+                //$scope.$API.play();
+                $scope.setVideo();
+                break;
+            case 3:
+                $scope.$API.pause();
+                break;
+            default:
+                console.log('$scope.complete fell to default. Catch me if you can.');
+                break;
+        }
+        //console.log('$scope.config.sources : ' + $scope.config.sources.src);
+        //$scope.partThisIs += 1;
+        //console.log('$scope.partThisIs : ' + $scope.partThisIs);
+        //$scope.setVideo();
     };
 
 };
@@ -333,10 +349,21 @@ arrControllers.Ch12Controller = function($scope, $state, $sce) {
 
 }
 
+arrControllers.Q1Controller = function ($scope, $sce){
+
+    $scope.btnImg = [
+        { btn: 'q1b1', img: '/images/red.png', state: 'c1' },
+        { btn: 'q1b2', img: '/images/red.png', state: 'ch21' },
+        { btn: 'q1b3', img: '/images/red.png', state: 'ch31' },
+        { btn: 'q1b4', img: '/images/red.png', state: 'ch41' }
+    ];
+
+}
 
 
 arrControllers.QuizController = function ($scope,$http,$sce) {
 
+    console.log('$scope.partThisIs from inside QuizController : ' + $scope.partThisIs);
     $scope.score = 0;
     $scope.activeQuestion = -1;
     $scope.activeQuestionAnswered = 0;

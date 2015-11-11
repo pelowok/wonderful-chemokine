@@ -50,8 +50,8 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
                     controller: 'C1Controller'
                 },
                 'layer2@c1': {
-                    templateUrl: 'partials/quiz1.html',
-                    controller: 'QuizController'
+                    templateUrl: 'partials/q1.html',
+                    controller: 'Q1Controller'
                 },
                 'layer3@c1': {
                     templateUrl: 'partials/c1l2.html',
