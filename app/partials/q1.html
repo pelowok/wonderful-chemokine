@@ -5,12 +5,24 @@
 
             <div class="btn-container">
 
-                <img class="btn q1b1" src="images/Chap1QuizCircleImage1.png" data-ng-click="console.log('potato')">
-                <img class="btn q1b2" src="images/Chap1QuizCircleImage2.png" alt="">
-                <img class="btn q1b3" src="images/Chap1QuizCircleImage3.png" alt="">
-                <img class="btn q1b4" src="images/Chap1QuizCircleImage4.png" alt="">
+                <span data-ng-repeat="obj in btnImg">
+                    <img id="{{ obj.id }}" data-ng-class="btn {{obj.class}}" data-ng-src={{obj.img}} data-ng-click="doThis($event)">
+                </span>
+                </span>
+
+                <!--<img data-ng-class="myClass" src="images/Chap1QuizCircleImage1.png" ng-click="doThis()">-->
+                <!--<img data-ng-class="myClass " src="images/Chap1QuizCircleImage2.png" ng-click="doThis()">-->
+                <!--<img data-ng-class="myClass " src="images/Chap1QuizCircleImage3.png" ng-click="doThis()">-->
+                <!--<img data-ng-class=" myClass" src="images/Chap1QuizCircleImage4.png" ng-click="doThis()">-->
 
             </div>
         </div>
+    </div>
+</div>
+
+<div ng-init="addNewClass=false">
+    <button ng-click="addNewClass=!addNewClass">Toggle Class</button>
+    <div ng-class="{addNewClass:addNewClass}" class="my-toggle-animation">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
     </div>
 </div>

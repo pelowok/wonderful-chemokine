@@ -352,11 +352,25 @@ arrControllers.Ch12Controller = function($scope, $state, $sce) {
 arrControllers.Q1Controller = function ($scope, $sce){
 
     $scope.btnImg = [
-        { btn: 'q1b1', img: '/images/red.png', state: 'c1' },
-        { btn: 'q1b2', img: '/images/red.png', state: 'ch21' },
-        { btn: 'q1b3', img: '/images/red.png', state: 'ch31' },
-        { btn: 'q1b4', img: '/images/red.png', state: 'ch41' }
+        { id: 'red', btn: 'q1b1', img: '/images/red.png', class: 'q1b' },
+        { id: 'red', btn: 'q1b2', img: '/images/red.png', class: 'q1b' },
+        { id: 'red', btn: 'q1b3', img: '/images/red.png', class: 'q1b' },
+        { id: 'red', btn: 'q1b4', img: '/images/red.png', class: 'q1b' }
     ];
+
+    $scope.doThis = function($event){
+
+        if ($event.currentTarget.id === 'purple')
+        {
+            $event.currentTarget.id = 'red';
+            $event.currentTarget.src = 'images/red.png';
+        }
+        else
+        {
+            $event.currentTarget.id = 'purple';
+            $event.currentTarget.src = 'images/purple.png';
+        }
+    }
 
 }
 

@@ -163,23 +163,25 @@ canvas {
 .quiz .btn-container{
   position: absolute;
   display: inline-block;
-  left: 5500px;
+  left: 545px;
   top: 150px;
-  width: 700px;
+  width: 750px;
   height: 700px;
   padding: 50px;
   margin: 100px;
 }
 
-.quiz .btn {
-  //display: inline-block;
+.q1b {
+  width: 285px;
+  height: 325px;
   cursor: pointer;
-  padding: 5px 15px;
-  //border-radius: 8px;
-
+  padding: 0px 20px 25px 20px;
 }
 
-
+.quiz .btn-on {
+  border: 10px solid #FFFFFF;
+  border-radius: 150px;
+}
 
 
 
@@ -442,4 +444,18 @@ canvas {
   left: -1500px;
 }
 
+// ANIMATIONS
 
+.my-toggle-animation {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+  background:white;
+  padding:10px;
+  border:1px solid rgba(0, 0, 0, 0.7);
+  color:black;
+}
+.my-toggle-animation.addNewClass {
+  background: #5b86c7;
+  color:#fff;
+  border-color:#496ca0;
+}
