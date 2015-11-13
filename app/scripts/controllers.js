@@ -384,7 +384,16 @@ arrControllers.Q1Controller = function ($scope, $sce){
     }
 
     $scope.showRef = function(){
+        var toggle = document.getElementByClassName('btn-references');
+        var slider = document.querySelector('.slider');
 
+        if (slider.classList.contains('opened')) {
+            slider.classList.remove('opened');
+            slider.classList.add('closed');
+        } else {
+            slider.classList.remove('closed');
+            slider.classList.add('opened');
+        }
     }
 }
 

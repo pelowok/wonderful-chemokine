@@ -17,7 +17,7 @@
                 <!--<img data-ng-class=" myClass" src="images/Chap1QuizCircleImage4.png" ng-click="doThis()">-->
             </div>
             <div>
-                <img class="btn-references" data-ng-src="images/red.png" alt="" data-ng-click="showRef()">
+                <img class="btn-references" data-ng-src="images/red.png" alt="" data-ng-click="addNewClass=!addNewClass">
             </div>
             <div>
                 <img class="btn-submit" data-ng-src="images/red.png" alt="" data-ng-click="doThis($event)">
@@ -28,14 +28,16 @@
             <div>
                 <img class="btn-fullvideo" data-ng-src="images/red.png" alt="" data-ng-click="doThis($event)">
             </div>
-            <div class="q1references" src="images/q1ref.png" data-ng-click="hideRef()"></div>
+            <div ng-class="{addNewClass:addNewClass}" class="my-toggle-animation chapter-1-quiz-ref"  data-ng-click="hideRef()">
+                <img src="images/Chap1QuizRef2.png" alt="">
+            </div>
         </div>
     </div>
 </div>
 
 <div ng-init="addNewClass=false">
     <button ng-click="addNewClass=!addNewClass">Toggle Class</button>
-    <div ng-class="{addNewClass:addNewClass}" class="my-toggle-animation">
+    <div ng-class="{addNewClass:addNewClass}" class="my-toggle-animation ">
          {{ someVar('moist') }}
     </div>
 </div>
