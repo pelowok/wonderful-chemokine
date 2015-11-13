@@ -6,7 +6,8 @@
             <div class="btn-container">
 
                 <span data-ng-repeat="obj in btnImg">
-                    <img id="{{ obj.id }}" data-ng-class="btn {{obj.class}}" data-ng-src={{obj.img}} data-ng-click="doThis($event)">
+                    <img id="{{ obj.id }}" class="btn q1b not-selected" data-ng-src={{obj.img}} data-ng-click="doThis($event)" data-foo="potato">
+                    <!--<img id="{{ obj.id }}" data-ng-class="btn {{obj.class}}" data-ng-src={{obj.img}} data-ng-click="doThis($event)">-->
                 </span>
                 </span>
 
@@ -14,8 +15,20 @@
                 <!--<img data-ng-class="myClass " src="images/Chap1QuizCircleImage2.png" ng-click="doThis()">-->
                 <!--<img data-ng-class="myClass " src="images/Chap1QuizCircleImage3.png" ng-click="doThis()">-->
                 <!--<img data-ng-class=" myClass" src="images/Chap1QuizCircleImage4.png" ng-click="doThis()">-->
-
             </div>
+            <div>
+                <img class="btn-references" data-ng-src="images/red.png" alt="" data-ng-click="showRef()">
+            </div>
+            <div>
+                <img class="btn-submit" data-ng-src="images/red.png" alt="" data-ng-click="doThis($event)">
+            </div>
+            <div>
+                <img class="btn-next" data-ng-src="images/red.png" alt="" data-ng-click="doThis($event)">
+            </div>
+            <div>
+                <img class="btn-fullvideo" data-ng-src="images/red.png" alt="" data-ng-click="doThis($event)">
+            </div>
+            <div class="q1references" src="images/q1ref.png" data-ng-click="hideRef()"></div>
         </div>
     </div>
 </div>
@@ -23,6 +36,6 @@
 <div ng-init="addNewClass=false">
     <button ng-click="addNewClass=!addNewClass">Toggle Class</button>
     <div ng-class="{addNewClass:addNewClass}" class="my-toggle-animation">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+         {{ someVar('moist') }}
     </div>
 </div>

@@ -364,14 +364,28 @@ arrControllers.Q1Controller = function ($scope, $sce){
         {
             $event.currentTarget.id = 'red';
             $event.currentTarget.src = 'images/red.png';
+            $event.currentTarget.foo = 'milkybar';
+
         }
         else
         {
             $event.currentTarget.id = 'purple';
             $event.currentTarget.src = 'images/purple.png';
+            $event.currentTarget.foo = 'tomato';
         }
+
+        console.log($event.currentTarget.foo);
+
+        $scope.someVar($event.currentTarget.foo);
     }
 
+    $scope.someVar = function(str){
+        return str;
+    }
+
+    $scope.showRef = function(){
+
+    }
 }
 
 
