@@ -146,8 +146,6 @@ canvas {
 
 }
 
-
-
 .quiz {
   width: 1920px;
   height: 1080px;
@@ -157,7 +155,7 @@ canvas {
   margin: 0 auto;
 }
 #q1{
-  background: url(../images/q1.png) no-repeat 0px 0px;
+  background: url(../images/Chap1Quiz.png) no-repeat 0px 0px;
 }
 
 .quiz .btn-container{
@@ -205,34 +203,51 @@ canvas {
   width: 80px;
 }
 
-.chapter-1-quiz-ref {
-  position: absolute;
-  top: 0;
-  overflow-y: hidden;
-  min-height: 1080px;
-  height: auto;
-  transition-property: all;
-  transition-duration: .5s;
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  z-index: 50;
-}
-
-.chapter-1-quiz-ref.closed {
-  max-height: 0;
+.img-selectall {
+  position:fixed;
+  top: 675px;
+  left: 345px;
 }
 
 // ANIMATIONS
 
-.my-toggle-animation {
-  -webkit-transition:0.5s linear all;
-  transition:0.5s linear all;
-  background:white;
-  padding:10px;
-  border:1px solid rgba(0, 0, 0, 0.7);
-  color:black;
+.slider-container {
+  //overflow:hidden;
+  position:fixed;
+  /* the container's height will determine the height of its slider  */
+  height:1080px;
 }
-.my-toggle-animation.addNewClass {
-  background: #5b86c7;
-  color:#fff;
-  border-color:#496ca0;
+
+.slider {
+  overflow-y: scroll;
+  /* complete liquid height based on the parent's height!! */
+  height:100%;
+
+  /* only transition on transform properties which are hardware accelerated = way better performances */
+  -webkit-transition:-webkit-transform .3s ease;
+  -moz-transition:   -moz-transform .3s ease;
+  -ms-transition:    -ms-transform .3s ease;
+  transition:        transform .3s ease;
+}
+
+.slider.closed {
+  /* visible */
+  -webkit-transform: translate(0, 0%);
+  -moz-transform: translate(0, 0%);
+  -ms-transform: translate(0, 0%);
+  transform: translate(0, 0%);
+}
+.slider.opened {
+  /* completely offscreen */
+  -webkit-transform: translate(0, -100%);
+  -moz-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  transform: translate(0, -100%);
+}
+
+.fadeout{
+  opacity:0;
+  transition: opacity 2s ease-in-out;
+  -moz-transition: opacity 2s ease-in-out;
+  -webkit-transition: opacity 2s ease-in-out;
 }

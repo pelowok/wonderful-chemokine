@@ -349,7 +349,7 @@ arrControllers.Ch12Controller = function($scope, $state, $sce) {
 
 }
 
-arrControllers.Q1Controller = function ($scope, $sce){
+arrControllers.Q1Controller = function ($scope, $interval, $sce){
 
     $scope.btnImg = [
         { id: 'red', btn: 'q1b1', img: '/images/red.png', class: 'q1b' },
@@ -383,9 +383,11 @@ arrControllers.Q1Controller = function ($scope, $sce){
         return str;
     }
 
-    $scope.showRef = function(){
-        var toggle = document.getElementByClassName('btn-references');
+    $scope.toggleRef = function(){
+
+        var toggle = document.getElementById('btnRef');
         var slider = document.querySelector('.slider');
+        console.log('toggleRef fired. was : ' + slider.classList.contains('opened'));
 
         if (slider.classList.contains('opened')) {
             slider.classList.remove('opened');
@@ -395,6 +397,33 @@ arrControllers.Q1Controller = function ($scope, $sce){
             slider.classList.add('opened');
         }
     }
+
+    $scope.showSelectAll = true;
+
+    var msgReps = 0;
+    $interval(function(){
+
+        switch (msgReps){
+            case 0:
+            case 1:
+                break;
+            case 2:
+                var selectall = document.querySelector('.img-selectall');
+                selectall.classList.add('fadeout');
+                break;
+            case 3:
+                $scope.showSelectAll = false;
+                break;
+            default:
+                break;
+        }
+
+        console.log('msgReps : ' + msgReps);
+        msgReps++;
+    }, 2000, 4);
+
+
+
 }
 
 

@@ -1,4 +1,5 @@
 <div class="full-width-container-top" ng-show="whatPartIsThis(1)">
+
     <div class="quiz-container">
 
         <div class="quiz" id="q1">
@@ -17,7 +18,10 @@
                 <!--<img data-ng-class=" myClass" src="images/Chap1QuizCircleImage4.png" ng-click="doThis()">-->
             </div>
             <div>
-                <img class="btn-references" data-ng-src="images/red.png" alt="" data-ng-click="addNewClass=!addNewClass">
+                <img id="btnRef" class="btn-references" data-ng-src="images/red.png" alt="" data-ng-click="toggleRef()">
+            </div>
+            <div>
+                <img class="img-selectall" data-ng-src="images/Chap1SelectAll.png" ng-show="showSelectAll">
             </div>
             <div>
                 <img class="btn-submit" data-ng-src="images/red.png" alt="" data-ng-click="doThis($event)">
@@ -28,10 +32,16 @@
             <div>
                 <img class="btn-fullvideo" data-ng-src="images/red.png" alt="" data-ng-click="doThis($event)">
             </div>
-            <div ng-class="{addNewClass:addNewClass}" class="my-toggle-animation chapter-1-quiz-ref"  data-ng-click="hideRef()">
-                <img src="images/Chap1QuizRef2.png" alt="">
+
+        </div>
+        <div class="slider-container">
+            <div class="slider closed" ng-click="toggleRef()">
+                <img src="images/Chap1QuizRefs.png" alt="">
             </div>
         </div>
+
+
+
     </div>
 </div>
 
