@@ -74,7 +74,7 @@ arrControllers.MainMenuController = function($scope, $state, $sce) {
     };
 
     $scope.btnImg = [
-        { btn: 'mm_s1', img: '/images/red.png', state: 'c1' },
+        { btn: 'mm_s1', img: '/images/red.png', state: 'c1.quiz' },
         { btn: 'mm_s2', img: '/images/red.png', state: 'ch21' },
         { btn: 'mm_s3', img: '/images/red.png', state: 'ch31' },
         { btn: 'mm_s4', img: '/images/red.png', state: 'ch41' }
@@ -486,6 +486,10 @@ arrControllers.Q1Controller = function ($scope, $interval, $state, $sce){
         console.log('showFullVideo() fired');
         $state.transitionTo('fullvideo');
     }
+
+    $scope.navTo = function (page) {
+        $state.transitionTo(page);
+    };
 
 }
 

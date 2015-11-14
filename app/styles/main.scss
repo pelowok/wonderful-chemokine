@@ -151,6 +151,11 @@ canvas {
   color: #fff;
   margin: 0 auto;
 }
+
+.hilite{
+  border-radius: 200px;
+  box-shadow: 0 0 12px 20px rgba(94,208,246,0.6);
+}
 #q1{
   background: url(../images/Chap1Quiz.png) no-repeat 0px 0px;
 }
@@ -166,11 +171,19 @@ canvas {
   padding: 0px;
   margin: 0px;
 }
-
-.q1b {
-  cursor: pointer;
+.quiz .shield {
+  width: 275px;
+  height: auto;
+  z-index: 30;
+  margin: 40px 40px 20px;
 }
-
+.q1b {
+  //margin: 40px 40px 20px;
+  transition: 0.2s linear;
+}
+//.q11{
+//
+//}
 .q11a{
   width: 344px;
   height: 364px;

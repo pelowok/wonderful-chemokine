@@ -48,9 +48,25 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
                 'layer1@c1': {
                     templateUrl: '/partials/vid1.html',
                     controller: 'C1Controller'
-                },
+                }
+            }
+        })
+
+        .state('c1.quiz', {
+            url: '/quiz',
+            views: {
                 'layer2@c1': {
                     templateUrl: 'partials/q1.html',
+                    controller: 'Q1Controller'
+                }
+            }
+        })
+
+        .state('c1.test', {
+            url: '/test',
+            views: {
+                'layer2@c1': {
+                    templateUrl: 'partials/c1l2.html',
                     controller: 'Q1Controller'
                 }
             }
