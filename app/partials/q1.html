@@ -32,7 +32,7 @@
                 <img class="btn-submit" data-ng-src="images/blank.png" alt="" data-ng-click="evaluateQuiz()">
             </div>
             <div>
-                <img class="btn-next" data-ng-src="images/red.png" alt="" data-ng-click="navTo( 'c1.test' )">
+                <img class="btn-next" data-ng-src="images/red.png" alt="" data-ng-click="navTo( 'c1.snapshot' )">
             </div>
             <div>
                 <img class="btn-fullvideo" data-ng-src="images/main_nav_top_right.png" alt="" data-ng-click="showFullVideo()">
@@ -40,22 +40,20 @@
 
         </div>
         <div class="slider-container">
-            <div class="slider closed" ng-click="toggleRef()">
+            <div class="slider closed" ng-click="toggleSlider('.slider')">
                 <img src="images/Chap1QuizRefs.png" alt="">
             </div>
         </div>
-        <div class="answer-container">
-            <div class="correct closed" ng-click="toggleCorrect()">
+        <div class="slider-container">
+            <div class="slider1 closed" ng-click="toggleSlider('.slider1')">
                 <img src="images/Chap1Correct.png" alt="">
             </div>
         </div>
-        <div class="answer-container">
-            <div class="tryagain closed" ng-click="toggleTryAgain()">
+        <div class="slider-container">
+            <div class="slider2 closed" ng-click="toggleSlider('.slider2')">
                 <img src="images/Chap1TryAgain.png" alt="">
             </div>
         </div>
-
-
 
     </div>
 </div>

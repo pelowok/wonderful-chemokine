@@ -1,0 +1,58 @@
+<div class="full-width-container-top">
+
+    <div class="snapshot-container">
+        <div id="s1" class="snapshot">
+            <div class="btn-container">
+
+                <span>
+                    <span>
+                        <img ng-click="toggleSlider('.slider1')" class="q1b q11a" ng-src="images/Chap1QuizImg1a.png">
+                    </span>
+                    <span>
+                        <img ng-click="toggleSlider('.slider2')" class="q1b q12a" ng-src="images/Chap1QuizImg2a.png">
+                    </span>
+                    <span>
+                        <img ng-click="toggleSlider('.slider3')" class="q1b q13a" ng-src="images/Chap1QuizImg3a.png">
+                    </span>
+                </span>
+            </div>
+            <div>
+                <img id="btnRef" class="btn-references-btm" data-ng-src="images/red.png" alt=""
+                     data-ng-click="toggleRef()">
+            </div>
+            <div>
+                <img class="img-msg" data-ng-src="images/Chap1TouchtoLearn.png" ng-show="showMsg">
+            </div>
+
+            <div>
+                <img class="btn-prev" data-ng-src="images/red.png" alt="" data-ng-click="navTo( 'c1.quiz' )">
+            </div>
+            <div>
+                <img class="btn-next" data-ng-src="images/red.png" alt="" data-ng-click="navTo( 'c1.teaser' )">
+            </div>
+
+        </div>
+        <div class="slider-container">
+            <div class="slider closed" ng-click="toggleSlider('.slider')">
+                <img src="images/Chap1SnapshotRefs.png" alt="">
+            </div>
+        </div>
+        <div class="slider-container">
+            <div class="slider1 closed" ng-click="toggleSlider('.slider1')">
+                <img src="images/Chap1SnapshotFeature1.png" alt="">
+            </div>
+        </div>
+        <div class="slider-container">
+            <div class="slider2 closed" ng-click="toggleSlider('.slider2')">
+                <img src="images/Chap1SnapshotFeature2.png" alt="">
+            </div>
+        </div>
+        <div class="slider-container">
+            <div class="slider3 closed" ng-click="toggleSlider('.slider3')">
+                <img src="images/Chap1SnapshotFeature3.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+

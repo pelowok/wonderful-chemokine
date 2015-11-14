@@ -14,6 +14,40 @@ arrControllers.MainController = function($scope, $state){
 
     }
 
+    $scope.navTo = function (page) {
+        $state.transitionTo(page);
+    };
+
+    $scope.toggleRef = function(){
+
+        var slider = document.querySelector('.slider');
+
+        console.log(slider);
+
+        if (slider.classList.contains('opened')) {
+            slider.classList.remove('opened');
+            slider.classList.add('closed');
+        } else {
+            slider.classList.remove('closed');
+            slider.classList.add('opened');
+        }
+    }
+
+    $scope.toggleSlider = function(myTarget){
+
+        var slider = document.querySelector(myTarget);
+        console.log(myTarget);
+        //var slider = $event.currentTarget;
+
+        if (slider.classList.contains('opened')) {
+            slider.classList.remove('opened');
+            slider.classList.add('closed');
+        } else {
+            slider.classList.remove('closed');
+            slider.classList.add('opened');
+        }
+    }
+
 };
 
 arrControllers.MainMenuController = function($scope, $state, $sce) {
@@ -86,6 +120,22 @@ arrControllers.MainMenuController = function($scope, $state, $sce) {
     }
 };
 
+arrControllers.SubNavController = function($scope, $state, $sce) {
+    console.log('SubNavController assigned');
+
+    $scope.subnavstate = "closenav";
+
+    $scope.flipSubNav = function(){
+        if($scope.subnavstate === "closenav"){
+            $scope.subnavstate = "opennav";
+        } else {
+            $scope.subnavstate = "closenav";
+        }
+    }
+
+}
+
+
 arrControllers.AttractController = function($sce, $scope, $interval, $state) {
 
     console.log('AttractController assigned');
@@ -114,9 +164,7 @@ arrControllers.AttractController = function($sce, $scope, $interval, $state) {
         autoPlay: true
     };
 
-    $scope.navTo = function (page) {
-        $state.transitionTo(page);
-    };
+
 
     $scope.checkAttractTime = function ($currentTime, $duration) {
 
@@ -143,9 +191,7 @@ arrControllers.BigBlueBallController = function($scope, $state) {
 
 
 
-    $scope.navTo = function (page) {
-        $state.transitionTo(page);
-    };
+
 
     console.log('bigblueball potato');
 
@@ -338,9 +384,7 @@ arrControllers.Ch12Controller = function($scope, $state, $sce) {
         autoPlay: true
     };
 
-    $scope.navTo = function (page) {
-        $state.transitionTo(page);
-    };
+
 
     $scope.complete = function () {
         console.log('$scope.complete fired');
@@ -406,33 +450,14 @@ arrControllers.Q1Controller = function ($scope, $interval, $state, $sce){
         $scope.allCorrect = $scope.currentState1==true && $scope.currentState2==true && $scope.currentState3==true && $scope.currentState4 == false;
         console.log('allCorrect : ' + $scope.allCorrect);
 
-        var slider = document.querySelector('.tryagain');
         if($scope.allCorrect){
-            slider = document.querySelector('.correct');
-        }
-
-        if (slider.classList.contains('opened')) {
-            slider.classList.remove('opened');
-            slider.classList.add('closed');
+            $scope.toggleSlider('.slider1');
         } else {
-            slider.classList.remove('closed');
-            slider.classList.add('opened');
+            $scope.toggleSlider('.slider2');
         }
-
     }
 
-    $scope.toggleRef = function(){
 
-        var slider = document.querySelector('.slider');
-
-        if (slider.classList.contains('opened')) {
-            slider.classList.remove('opened');
-            slider.classList.add('closed');
-        } else {
-            slider.classList.remove('closed');
-            slider.classList.add('opened');
-        }
-    }
     $scope.toggleCorrect = function(){
 
         var slider = document.querySelector('.correct');
@@ -487,12 +512,107 @@ arrControllers.Q1Controller = function ($scope, $interval, $state, $sce){
         $state.transitionTo('fullvideo');
     }
 
-    $scope.navTo = function (page) {
-        $state.transitionTo(page);
-    };
+
 
 }
 
+arrControllers.S1Controller = function ($scope, $interval, $state, $sce) {
+
+    console.log('S1Controller assigned');
+
+    $scope.showMsg = true;
+
+    var msgReps = 0;
+    $interval(function(){
+
+        switch (msgReps){
+            case 0:
+            case 1:
+                break;
+            case 2:
+                var msg = document.querySelector('.img-msg');
+                msg.classList.add('fadeout');
+                break;
+            case 3:
+                $scope.showMsg = false;
+                break;
+            default:
+                break;
+        }
+
+        console.log('msgReps : ' + msgReps);
+        msgReps++;
+    }, 2000, 4);
+
+}
+
+arrControllers.T1Controller = function ($scope, $interval, $state, $sce) {
+    console.log('T1Controller assigned');
+
+    $scope.API = null;
+
+    $scope.onPlayerReady = function ($API) {
+        console.log('onPlayerReady fired');
+        $scope.$API = $API;
+    };
+
+
+
+    $scope.complete = function () {
+        console.log('$scope.complete fired');
+        //$state.transitionTo('mainmenu');
+        $scope.$API.play();
+    };
+
+    $scope.config = {
+        sources: [
+            {
+                src: $sce.trustAsResourceUrl("/video/Teaser_1.mp4"),
+                type: "video/mp4",
+                ngClick: "videoComplete()"
+            }
+        ],
+        theme: "/bower_components/videogular-themes-default/videogular.css",
+        plugins: {
+            poster: "http://www.videogular.com/assets/images/videogular.png"
+        },
+        autoPlay: true
+    };
+}
+
+arrControllers.V1Controller = function ($scope, $interval, $state, $sce) {
+    console.log('V1Controller assigned');
+
+    $scope.API = null;
+
+    $scope.onPlayerReady = function ($API) {
+        console.log('onPlayerReady fired');
+        $scope.$API = $API;
+    };
+
+
+
+    $scope.complete = function () {
+        console.log('$scope.complete fired');
+        $state.transitionTo('mainmenu');
+        //$scope.$API.play();
+    };
+
+    $scope.config = {
+        sources: [
+            {
+                src: $sce.trustAsResourceUrl("/video/Segment_1.mp4"),
+                type: "video/mp4",
+                ngClick: "complete()"
+            }
+        ],
+        theme: "/bower_components/videogular-themes-default/videogular.css",
+        plugins: {
+            poster: "http://www.videogular.com/assets/images/videogular.png"
+        },
+        autoPlay: true
+    };
+}
 
 arrControllers.DEFUNCT_QUIZCONTROLLER = function ($scope,$http,$sce) {
 
@@ -587,9 +707,7 @@ arrControllers.FullVideoController = function($sce, $scope, $interval, $state) {
     };
 
 
-    $scope.navTo = function (page) {
-        $state.transitionTo(page);
-    };
+
 
     $scope.videoComplete = function () {
         console.log('$scope.videoComplete fired');

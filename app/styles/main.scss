@@ -44,6 +44,46 @@ body {
   overflow: hidden;
 }
 
+.subnav {
+  overflow: hidden;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: 20;
+  padding: 0;
+  margin: 0;
+}
+.subnav-img {
+  position: fixed;
+  display: inline-block;
+  bottom: -4px;
+  right: 0;
+  z-index: 21;
+}
+.subnav-text {
+  position: fixed;
+  top: 0px;
+  right: -1px;
+  transition: transform .3s ease;
+  z-index: 20;
+}
+.shownav{
+  transition: 0.3s ease;
+  right: 0px;
+}
+.hidenav {
+  transition: 0.3s ease;
+  right: -300px;
+}
+.opennav{
+  transition: 0.3s ease;
+  right: -1px;
+}
+.closenav {
+  transition: 0.3s ease;
+  right: -1930px;
+}
+
 .attractVideo {
   margin: 40px;
   font-size: 16px;
@@ -187,37 +227,33 @@ canvas {
 .q11a{
   width: 344px;
   height: 364px;
-  //background-image: url(../images/Chap1QuizImg1a.jpg);
   transition: 0.5s linear;
 }
 .q11b{
-  background-image:url(../images/Chap1QuizImg1b.jpg);
+  background-image:url(../images/Chap1QuizImg1b.png);
 }
 .q12a{
   width: 344px;
   height: 364px;
-  //background-image: url(../images/Chap1QuizImg2a.png);
   transition: 0.5s linear;
 }
 .q12b{
-  background-image:url(../images/Chap1QuizImg2b.jpg);
+  background-image:url(../images/Chap1QuizImg2b.png);
 }
 .q13a{
   width: 344px;
   height: 364px;
-  //background-image: url(../images/Chap1QuizImg3a.png);
   transition: 0.5s linear;
 }
 .q13b{
-  background-image:url(../images/Chap1QuizImg3b.jpg);
+  background-image:url(../images/Chap1QuizImg3b.png);
 }.q14a{
    width: 344px;
    height: 364px;
-   //background-image: url(../images/Chap1QuizImg4a.png);
    transition: 0.5s linear;
  }
 .q14b{
-  background-image:url(../images/Chap1QuizImg4b.jpg);
+  background-image:url(../images/Chap1QuizImg4b.png);
 }
 
 .quiz .btn-on {
@@ -229,6 +265,13 @@ canvas {
   position: absolute;
   right: 280px;
   bottom: 210px;
+  height: 80px;
+  width: 230px;
+}
+.btn-references-btm{
+  position: absolute;
+  right: 280px;
+  bottom: 70px;
   height: 80px;
   width: 230px;
 }
@@ -246,6 +289,14 @@ canvas {
   height: 80px;
   width: 80px;
 }
+.btn-prev{
+  position: absolute;
+  left: 770px;
+  bottom: 465px;
+  height: 80px;
+  width: 80px;
+}
+
 
 .btn-fullvideo{
   position:fixed;
@@ -268,86 +319,25 @@ canvas {
   height:1080px;
 }
 
-.slider {
+.slider, .slider1, .slider2, .slider3 {
   overflow-y: scroll;
   /* complete liquid height based on the parent's height!! */
-  height:100%;
+  height: 100%;
 
   /* only transition on transform properties which are hardware accelerated = way better performances */
-  -webkit-transition:-webkit-transform .3s ease;
-  -moz-transition:   -moz-transform .3s ease;
-  -ms-transition:    -ms-transform .3s ease;
-  transition:        transform .3s ease;
+  -webkit-transition: -webkit-transform .3s ease;
+  -moz-transition: -moz-transform .3s ease;
+  -ms-transition: -ms-transform .3s ease;
+  transition: transform .3s ease;
 }
-
-.slider.closed {
+.closed {
   /* visible */
   -webkit-transform: translate(0, 0%);
   -moz-transform: translate(0, 0%);
   -ms-transform: translate(0, 0%);
   transform: translate(0, 0%);
 }
-.slider.opened {
-  /* completely offscreen */
-  -webkit-transform: translate(0, -100%);
-  -moz-transform: translate(0, -100%);
-  -ms-transform: translate(0, -100%);
-  transform: translate(0, -100%);
-}
-
-.answer-container {
-  //overflow:hidden;
-  position:fixed;
-  /* the container's height will determine the height of its slider  */
-  height:1080px;
-}
-
-.correct {
-  overflow-y: scroll;
-  /* complete liquid height based on the parent's height!! */
-  height:100%;
-
-  /* only transition on transform properties which are hardware accelerated = way better performances */
-  -webkit-transition:-webkit-transform .3s ease;
-  -moz-transition:   -moz-transform .3s ease;
-  -ms-transition:    -ms-transform .3s ease;
-  transition:        transform .3s ease;
-}
-
-.correct.closed {
-  /* visible */
-  -webkit-transform: translate(0, 0%);
-  -moz-transform: translate(0, 0%);
-  -ms-transform: translate(0, 0%);
-  transform: translate(0, 0%);
-}
-.correct.opened {
-  /* completely offscreen */
-  -webkit-transform: translate(0, -100%);
-  -moz-transform: translate(0, -100%);
-  -ms-transform: translate(0, -100%);
-  transform: translate(0, -100%);
-}
-.tryagain {
-  overflow-y: scroll;
-  /* complete liquid height based on the parent's height!! */
-  height:100%;
-
-  /* only transition on transform properties which are hardware accelerated = way better performances */
-  -webkit-transition:-webkit-transform .3s ease;
-  -moz-transition:   -moz-transform .3s ease;
-  -ms-transition:    -ms-transform .3s ease;
-  transition:        transform .3s ease;
-}
-
-.tryagain.closed {
-  /* visible */
-  -webkit-transform: translate(0, 0%);
-  -moz-transform: translate(0, 0%);
-  -ms-transform: translate(0, 0%);
-  transform: translate(0, 0%);
-}
-.tryagain.opened {
+.opened {
   /* completely offscreen */
   -webkit-transform: translate(0, -100%);
   -moz-transform: translate(0, -100%);
@@ -361,3 +351,89 @@ canvas {
   -moz-transition: opacity 2s ease-in-out;
   -webkit-transition: opacity 2s ease-in-out;
 }
+
+.snapshot {
+  width: 1920px;
+  height: 1080px;
+  position:relative;
+  overflow: hidden;
+  color: #fff;
+  margin: 0 auto;
+}
+
+#s1{
+  background: url(../images/Chapter1Snapshot.png) no-repeat 0px 0px;
+}
+
+.snapshot .btn-container{
+  position: absolute;
+  display: inline-block;
+  //float: left;
+  text-align: center;
+  left: 820px;
+  top: 200px;
+  width: 780px;
+  height: 700px;
+  padding: 0px;
+  margin: 0px;
+}
+.img-msg {
+  position:fixed;
+  top: 550px;
+  left: 930px;
+}
+
+.teaser {
+  width: 1920px;
+  height: 1080px;
+  position:absolute;
+  overflow: hidden;
+  color: #fff;
+  margin: 0 auto;
+}
+
+#t1{
+  background: url(../images/Chapter1Teaser.png) no-repeat 0px 0px;
+}
+
+.videogular{
+  background-color: transparent;
+}
+.teaser .videogular-container {
+  position: absolute;
+  top: 200px;
+  left: 300px;
+  width: 1344px;
+  height: 756px;
+  margin: auto;
+  overflow: hidden;
+}
+.btn-teaser-play {
+  position: relative;
+  top: 520px;
+  left: 1100px;
+}
+
+.segment {
+  width: 1578px;
+  height: 898px;
+  position:absolute;
+  top: 91px;
+  left: 161px;
+  overflow: hidden;
+  color: #fff;
+  //margin: 0 auto;
+}
+
+#v1{
+  background: url(../images/fullvideoframe.png) no-repeat 0px 0px;
+}
+
+.segment .videogular-container {
+  width: 1578px;
+  height: 898px;
+  margin: auto;
+  overflow: hidden;
+}
+
+
