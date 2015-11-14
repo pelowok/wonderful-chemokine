@@ -24,8 +24,8 @@ body {
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
-  width: auto;
-  height: auto;
+  width: 1920px;
+  height: 1080px;
   z-index: -10;
   margin: auto;
   overflow: hidden;
@@ -117,13 +117,10 @@ canvas {
   position: fixed;
   left: 0;
   top: 0;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+  width: 1920px;
+  height: 1080px;
   z-index: 30;
   overflow: hidden;
-
 }
 //
 .splash-menu {
