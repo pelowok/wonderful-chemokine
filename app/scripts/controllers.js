@@ -349,7 +349,7 @@ arrControllers.Ch12Controller = function($scope, $state, $sce) {
 
 }
 
-arrControllers.Q1Controller = function ($scope, $interval, $sce){
+arrControllers.Q1Controller = function ($scope, $interval, $state, $sce){
 
     $scope.btnImg = [
         { id: 'red', btn: 'q1b1', img: '/images/red.png', class: 'q1b' },
@@ -358,36 +358,96 @@ arrControllers.Q1Controller = function ($scope, $interval, $sce){
         { id: 'red', btn: 'q1b4', img: '/images/red.png', class: 'q1b' }
     ];
 
-    $scope.doThis = function($event){
+    $scope.currentState1 = false;
+    $scope.currentState2 = false;
+    $scope.currentState3 = false;
+    $scope.currentState4 = false;
 
-        if ($event.currentTarget.id === 'purple')
-        {
-            $event.currentTarget.id = 'red';
-            $event.currentTarget.src = 'images/red.png';
-            $event.currentTarget.foo = 'milkybar';
-
+    $scope.boolQ11 = function($event){
+        $scope.currentState1 = !( $scope.currentState1 );
+        if($scope.currentState1){
+            $event.currentTarget.src = 'images/Chap1QuizImg1b.png';
+        } else {
+            $event.currentTarget.src = 'images/Chap1QuizImg1a.png';
         }
-        else
-        {
-            $event.currentTarget.id = 'purple';
-            $event.currentTarget.src = 'images/purple.png';
-            $event.currentTarget.foo = 'tomato';
+    }
+    $scope.boolQ12 = function($event){
+        $scope.currentState2 = !( $scope.currentState2 );
+        if($scope.currentState2){
+            $event.currentTarget.src = 'images/Chap1QuizImg2b.png';
+        } else {
+            $event.currentTarget.src = 'images/Chap1QuizImg2a.png';
         }
-
-        console.log($event.currentTarget.foo);
-
-        $scope.someVar($event.currentTarget.foo);
+    }
+    $scope.boolQ13 = function($event){
+        $scope.currentState3 = !( $scope.currentState3 );
+        if($scope.currentState3){
+            $event.currentTarget.src = 'images/Chap1QuizImg3b.png';
+        } else {
+            $event.currentTarget.src = 'images/Chap1QuizImg3a.png';
+        }
+    }
+    $scope.boolQ14 = function($event){
+        $scope.currentState4 = !( $scope.currentState4 );
+        if($scope.currentState4){
+            $event.currentTarget.src = 'images/Chap1QuizImg4b.png';
+        } else {
+            $event.currentTarget.src = 'images/Chap1QuizImg4a.png';
+        }
     }
 
-    $scope.someVar = function(str){
-        return str;
+    $scope.doThis = function($event){
+        console.log($event.currentTarget.foo);
+    }
+
+    $scope.allCorrect = false;
+
+    $scope.evaluateQuiz = function(){
+        $scope.allCorrect = $scope.currentState1==true && $scope.currentState2==true && $scope.currentState3==true && $scope.currentState4 == false;
+        console.log('allCorrect : ' + $scope.allCorrect);
+
+        var slider = document.querySelector('.tryagain');
+        if($scope.allCorrect){
+            slider = document.querySelector('.correct');
+        }
+
+        if (slider.classList.contains('opened')) {
+            slider.classList.remove('opened');
+            slider.classList.add('closed');
+        } else {
+            slider.classList.remove('closed');
+            slider.classList.add('opened');
+        }
+
     }
 
     $scope.toggleRef = function(){
 
-        var toggle = document.getElementById('btnRef');
         var slider = document.querySelector('.slider');
-        console.log('toggleRef fired. was : ' + slider.classList.contains('opened'));
+
+        if (slider.classList.contains('opened')) {
+            slider.classList.remove('opened');
+            slider.classList.add('closed');
+        } else {
+            slider.classList.remove('closed');
+            slider.classList.add('opened');
+        }
+    }
+    $scope.toggleCorrect = function(){
+
+        var slider = document.querySelector('.correct');
+
+        if (slider.classList.contains('opened')) {
+            slider.classList.remove('opened');
+            slider.classList.add('closed');
+        } else {
+            slider.classList.remove('closed');
+            slider.classList.add('opened');
+        }
+    }
+    $scope.toggleTryAgain = function(){
+
+        var slider = document.querySelector('.tryagain');
 
         if (slider.classList.contains('opened')) {
             slider.classList.remove('opened');
@@ -422,12 +482,15 @@ arrControllers.Q1Controller = function ($scope, $interval, $sce){
         msgReps++;
     }, 2000, 4);
 
-
+    $scope.showFullVideo = function(){
+        console.log('showFullVideo() fired');
+        $state.transitionTo('fullvideo');
+    }
 
 }
 
 
-arrControllers.QuizController = function ($scope,$http,$sce) {
+arrControllers.DEFUNCT_QUIZCONTROLLER = function ($scope,$http,$sce) {
 
     console.log('$scope.partThisIs from inside QuizController : ' + $scope.partThisIs);
     $scope.score = 0;
@@ -508,6 +571,47 @@ arrControllers.QuizController = function ($scope,$http,$sce) {
 
 }
 
+arrControllers.FullVideoController = function($sce, $scope, $interval, $state) {
 
+    console.log('FullVideoController assigned');
+
+    $scope.API = null;
+
+    $scope.onPlayerReady = function ($API) {
+        console.log('onPlayerReady fired');
+        $scope.$API = $API;
+    };
+
+
+    $scope.navTo = function (page) {
+        $state.transitionTo(page);
+    };
+
+    $scope.videoComplete = function () {
+        console.log('$scope.videoComplete fired');
+        $state.transitionTo('mainmenu');
+    };
+
+    $scope.config = {
+        sources: [
+            {
+                src: $sce.trustAsResourceUrl("/video/fullvideo.mp4"),
+                type: "video/mp4",
+                ngClick: "videoComplete()"
+            }
+        ],
+        theme: "/bower_components/videogular-themes-default/videogular.css",
+        plugins: {
+            poster: "http://www.videogular.com/assets/images/videogular.png"
+        },
+        autoPlay: true
+    };
+
+    var vidClick = function(){
+        console.log('vidClick() fired');
+        $scope.$API.playPause();
+    }
+
+};
 
 infiApp.controller(arrControllers);

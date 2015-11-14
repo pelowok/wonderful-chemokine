@@ -161,19 +161,53 @@ canvas {
 .quiz .btn-container{
   position: absolute;
   display: inline-block;
-  left: 545px;
-  top: 150px;
-  width: 750px;
+  float: left;
+  left: 690px;
+  top: 250px;
+  width: 780px;
   height: 700px;
-  padding: 50px;
-  margin: 100px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .q1b {
-  width: 285px;
-  height: 325px;
   cursor: pointer;
-  padding: 0px 20px 25px 20px;
+}
+
+.q11a{
+  width: 344px;
+  height: 364px;
+  //background-image: url(../images/Chap1QuizImg1a.jpg);
+  transition: 0.5s linear;
+}
+.q11b{
+  background-image:url(../images/Chap1QuizImg1b.jpg);
+}
+.q12a{
+  width: 344px;
+  height: 364px;
+  //background-image: url(../images/Chap1QuizImg2a.png);
+  transition: 0.5s linear;
+}
+.q12b{
+  background-image:url(../images/Chap1QuizImg2b.jpg);
+}
+.q13a{
+  width: 344px;
+  height: 364px;
+  //background-image: url(../images/Chap1QuizImg3a.png);
+  transition: 0.5s linear;
+}
+.q13b{
+  background-image:url(../images/Chap1QuizImg3b.jpg);
+}.q14a{
+   width: 344px;
+   height: 364px;
+   //background-image: url(../images/Chap1QuizImg4a.png);
+   transition: 0.5s linear;
+ }
+.q14b{
+  background-image:url(../images/Chap1QuizImg4b.jpg);
 }
 
 .quiz .btn-on {
@@ -201,6 +235,12 @@ canvas {
   bottom: 465px;
   height: 80px;
   width: 80px;
+}
+
+.btn-fullvideo{
+  position:fixed;
+  top: 0px;
+  right: -50px;
 }
 
 .img-selectall {
@@ -238,6 +278,66 @@ canvas {
   transform: translate(0, 0%);
 }
 .slider.opened {
+  /* completely offscreen */
+  -webkit-transform: translate(0, -100%);
+  -moz-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  transform: translate(0, -100%);
+}
+
+.answer-container {
+  //overflow:hidden;
+  position:fixed;
+  /* the container's height will determine the height of its slider  */
+  height:1080px;
+}
+
+.correct {
+  overflow-y: scroll;
+  /* complete liquid height based on the parent's height!! */
+  height:100%;
+
+  /* only transition on transform properties which are hardware accelerated = way better performances */
+  -webkit-transition:-webkit-transform .3s ease;
+  -moz-transition:   -moz-transform .3s ease;
+  -ms-transition:    -ms-transform .3s ease;
+  transition:        transform .3s ease;
+}
+
+.correct.closed {
+  /* visible */
+  -webkit-transform: translate(0, 0%);
+  -moz-transform: translate(0, 0%);
+  -ms-transform: translate(0, 0%);
+  transform: translate(0, 0%);
+}
+.correct.opened {
+  /* completely offscreen */
+  -webkit-transform: translate(0, -100%);
+  -moz-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  transform: translate(0, -100%);
+}
+.tryagain {
+  overflow-y: scroll;
+  /* complete liquid height based on the parent's height!! */
+  height:100%;
+
+  /* only transition on transform properties which are hardware accelerated = way better performances */
+  -webkit-transition:-webkit-transform .3s ease;
+  -moz-transition:   -moz-transform .3s ease;
+  -ms-transition:    -ms-transform .3s ease;
+  transition:        transform .3s ease;
+}
+
+.tryagain.closed {
+  /* visible */
+  -webkit-transform: translate(0, 0%);
+  -moz-transform: translate(0, 0%);
+  -ms-transform: translate(0, 0%);
+  transform: translate(0, 0%);
+}
+.tryagain.opened {
   /* completely offscreen */
   -webkit-transform: translate(0, -100%);
   -moz-transform: translate(0, -100%);

@@ -1,0 +1,2 @@
+[Fri Nov 13 2015 21:33:17 GMT-0500 (Eastern Standard Time)] layer "CircleArrowButton.png": Duplicate path: CircleArrowButton.png
+[Fri Nov 13 2015 21:33:17 GMT-0500 (Eastern Standard Time)] layer "Chap3TouchLearnMore.png copy": Expected end of input but "c" found.

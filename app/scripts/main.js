@@ -52,10 +52,16 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
                 'layer2@c1': {
                     templateUrl: 'partials/q1.html',
                     controller: 'Q1Controller'
-                },
-                'layer3@c1': {
-                    templateUrl: 'partials/c1l2.html',
-                    controller: 'C1Controller'
+                }
+            }
+        })
+
+        .state('fullvideo', {
+            url: '/fullvideo',
+            views: {
+                'main': {
+                    templateUrl: '/partials/vid1.html',
+                    controller: 'FullVideoController'
                 }
             }
         });

@@ -6,16 +6,30 @@
 
             <div class="btn-container">
 
-                <span data-ng-repeat="obj in btnImg">
-                    <img id="{{ obj.id }}" class="btn q1b not-selected" data-ng-src={{obj.img}} data-ng-click="doThis($event)" data-foo="potato">
-                    <!--<img id="{{ obj.id }}" data-ng-class="btn {{obj.class}}" data-ng-src={{obj.img}} data-ng-click="doThis($event)">-->
+                <span>
+                    <span>
+                        <img ng-click="boolQ11($event)" ng-class="{q11b: currentState1}" class="q1b q11a" ng-src="images/Chap1QuizImg1a.png">
+                    </span>
+                    <span>
+                        <img ng-click="boolQ12($event)" ng-class="{q12b: currentState2}" class="q1b q12a" ng-src="images/Chap1QuizImg2a.png">
+                    </span>
+                    <span>
+                        <img ng-click="boolQ13($event)" ng-class="{q13b: currentState3}" class="q1b q13a" ng-src="images/Chap1QuizImg3a.png">
+                    </span>
+                    <span>
+                        <img ng-click="boolQ14($event)" ng-class="{q14b: currentState4}" class="q1b q14a" ng-src="images/Chap1QuizImg4a.png">
+                    </span>
+                    <!--<span>-->
+                        <!--<img ng-click="boolQ12()" ng-class="{q12b: currentState2}" class="q1b q12a">-->
+                    <!--</span>-->
+                    <!--<span>-->
+                        <!--<img ng-click="boolQ13()" ng-class="{q13b: currentState3}" class="q1b q13a">-->
+                    <!--</span>-->
+                    <!--<span>-->
+                        <!--<img ng-click="boolQ14()" ng-class="{q14b: currentState4}" class="q1b q14a">-->
+                    <!--</span>-->
                 </span>
                 </span>
-
-                <!--<img data-ng-class="myClass" src="images/Chap1QuizCircleImage1.png" ng-click="doThis()">-->
-                <!--<img data-ng-class="myClass " src="images/Chap1QuizCircleImage2.png" ng-click="doThis()">-->
-                <!--<img data-ng-class="myClass " src="images/Chap1QuizCircleImage3.png" ng-click="doThis()">-->
-                <!--<img data-ng-class=" myClass" src="images/Chap1QuizCircleImage4.png" ng-click="doThis()">-->
             </div>
             <div>
                 <img id="btnRef" class="btn-references" data-ng-src="images/red.png" alt="" data-ng-click="toggleRef()">
@@ -24,19 +38,29 @@
                 <img class="img-selectall" data-ng-src="images/Chap1SelectAll.png" ng-show="showSelectAll">
             </div>
             <div>
-                <img class="btn-submit" data-ng-src="images/red.png" alt="" data-ng-click="doThis($event)">
+                <img class="btn-submit" data-ng-src="images/red.png" alt="" data-ng-click="evaluateQuiz()">
             </div>
             <div>
                 <img class="btn-next" data-ng-src="images/red.png" alt="" data-ng-click="doThis($event)">
             </div>
             <div>
-                <img class="btn-fullvideo" data-ng-src="images/red.png" alt="" data-ng-click="doThis($event)">
+                <img class="btn-fullvideo" data-ng-src="images/main_nav_top_right.png" alt="" data-ng-click="showFullVideo()">
             </div>
 
         </div>
         <div class="slider-container">
             <div class="slider closed" ng-click="toggleRef()">
                 <img src="images/Chap1QuizRefs.png" alt="">
+            </div>
+        </div>
+        <div class="answer-container">
+            <div class="correct closed" ng-click="toggleCorrect()">
+                <img src="images/Chap1Correct.png" alt="">
+            </div>
+        </div>
+        <div class="answer-container">
+            <div class="tryagain closed" ng-click="toggleTryAgain()">
+                <img src="images/Chap1TryAgain.png" alt="">
             </div>
         </div>
 
