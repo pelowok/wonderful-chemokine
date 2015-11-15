@@ -114,17 +114,6 @@ body {
   overflow: hidden;
 }
 
-//.invisible-screen {
-//  position: fixed;
-//  background-color: rgba(0,0,100,0.25);
-//  width: 1920px;
-//  height: 1080px;
-//  left: 0;
-//  top: 0;
-//  z-index: 20;
-//  margin: 0;
-//  padding: 0;
-//}
 
 .attractVideo .caption {
   position: relative;
@@ -183,14 +172,20 @@ canvas {
 }
 
 .side-menu {
-  float: right;
-  width: 210px;
-  padding: 10px;
-  margin-top: 200px;
+  position: absolute;
+  width: 710px;
+  padding: 5px;
+  top: 435px;
+  right: 0px;
 }
-
-.delayed10 {
-
+.btn-side-body{
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+}
+.btn-side-menu {
+  width: 700px;
+  height: 148px;
 }
 
 .quiz {

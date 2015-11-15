@@ -1,15 +1,32 @@
 <!--<div class="full-width-container">-->
-    <div class="subnav">
+<div class="subnav">
 
-        <span class="subnav-text" ng-class="subnavstate">
-            <img src="images/subNavFly.png">
-        </span>
+    <span class="subnav-text" ng-class="subnavstate">
+        <img src="images/subNavFly.png">
+    </span>
 
-        <span class="subnav-img" ng-click="flipSubNav()">
-            <img src="images/subNav.png">
-        </span>
+    <span class="subnav-img" ng-click="flipSubNav()">
+        <img src="images/subNav.png">
+    </span>
 
-    </div>
+</div>
+<div>
+    <img class="btn-side-body"
+         data-ng-src="images/blank.png"
+         alt=""
+         data-ng-click="flipSubNav()"
+         data-ng-show="boolSideNavOpen">
+</div>
+
+<div class="side-menu" data-ng-show="boolSideNavOpen">
+    <img class="btn-side-menu" data-ng-src="images/blank.png" alt="" data-ng-click="navTo('c1.tranz')">
+    <img class="btn-side-menu" data-ng-src="images/blank.png" alt="" data-ng-click="navTo('c2.tranz')">
+    <img class="btn-side-menu" data-ng-src="images/blank.png" alt="" data-ng-click="navTo('c3.tranz')">
+    <img class="btn-side-menu" data-ng-src="images/blank.png" alt="" data-ng-click="navTo('c4.tranz')">
+
+</div>
+
+
 <!--</div>-->
 
 
