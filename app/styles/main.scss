@@ -19,69 +19,79 @@ body {
 }
 
 .full-width-container {
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
   width: 1920px;
   height: 1080px;
-  z-index: -10;
+  //z-index: -10;
   margin: auto;
   overflow: hidden;
 }
 
 .full-width-container-top {
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: 10;
+  //z-index: 10;
   margin: auto;
   overflow: hidden;
 }
 
 .subnav {
   overflow: hidden;
-  position: absolute;
-  right: 0px;
+  //position: absolute;
   bottom: 0px;
-  z-index: 20;
+  right: 0px;
   padding: 0;
   margin: 0;
 }
 .subnav-img {
-  position: fixed;
-  display: inline-block;
-  bottom: -4px;
-  right: 0;
-  z-index: 21;
+  position: absolute;
+  //display: inline-block;
+  bottom: 0px;
+  right: 0px;
+  //z-index: 21;
 }
 .subnav-text {
-  position: fixed;
-  top: 0px;
-  right: -1px;
+  position: absolute;
+  bottom: 0px;
+  //right: -1930px;
+  opacity: 0;
   transition: transform .3s ease;
-  z-index: 20;
+  //z-index: 20;
 }
 .shownav{
+  //transition: 0.3s ease;
+  //right: 0px;
+  opacity: 1;
+  visibility: visible;
   transition: 0.3s ease;
-  right: 0px;
 }
 .hidenav {
+  //transition: 0.3s ease;
+  //right: -300px;
+  opacity: 0;
+  visibility: hidden;
   transition: 0.3s ease;
-  right: -300px;
 }
 .opennav{
+  opacity: 1;
+  visibility: visible;
   transition: 0.3s ease;
-  right: -1px;
+  //right: 0px;
 }
 .closenav {
+  opacity: 0;
+  visibility: hidden;
   transition: 0.3s ease;
-  right: -1930px;
+  //right: -1930px;
 }
 
 .attractVideo {
@@ -99,22 +109,22 @@ body {
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: -10;
+  //z-index: -10;
   margin: auto;
   overflow: hidden;
 }
 
-.invisible-screen {
-  position: fixed;
-  background-color: rgba(0,0,100,0.25);
-  width: 1920px;
-  height: 1080px;
-  left: 0;
-  top: 0;
-  z-index: 20;
-  margin: 0;
-  padding: 0;
-}
+//.invisible-screen {
+//  position: fixed;
+//  background-color: rgba(0,0,100,0.25);
+//  width: 1920px;
+//  height: 1080px;
+//  left: 0;
+//  top: 0;
+//  z-index: 20;
+//  margin: 0;
+//  padding: 0;
+//}
 
 .attractVideo .caption {
   position: relative;
@@ -132,9 +142,9 @@ body {
   color: #fff;
 }
 
-.bigblueball{
-  z-index: 10;
-}
+//.bigblueball{
+//  z-index: 10;
+//}
 canvas {
   position: fixed;
   left: 0;
@@ -146,7 +156,7 @@ canvas {
 .btn-menu {
   width: 450px;
   height: 450px;
-  z-index: 30;
+  //z-index: 30;
 }
 
 .btn-main-menu {
@@ -159,7 +169,7 @@ canvas {
   top: 0;
   width: 1920px;
   height: 1080px;
-  z-index: 30;
+  //z-index: 30;
   overflow: hidden;
 }
 //
@@ -168,7 +178,7 @@ canvas {
   width: 1400px;
   margin: auto;
   margin-top: 100px;
-  z-index: 30;
+  //z-index: 30;
   overflow: hidden;
 }
 
@@ -214,7 +224,7 @@ canvas {
 .quiz .shield {
   width: 275px;
   height: auto;
-  z-index: 30;
+  //z-index: 30;
   margin: 40px 40px 20px;
 }
 .q1b {
@@ -299,13 +309,13 @@ canvas {
 
 
 .btn-fullvideo{
-  position:fixed;
+  position: absolute;
   top: 0px;
   right: -50px;
 }
 
 .img-selectall {
-  position:fixed;
+  position: absolute;
   top: 675px;
   left: 345px;
 }
@@ -314,7 +324,7 @@ canvas {
 
 .slider-container {
   //overflow:hidden;
-  position:fixed;
+  position:absolute;
   /* the container's height will determine the height of its slider  */
   height:1080px;
 }
@@ -378,7 +388,7 @@ canvas {
   margin: 0px;
 }
 .img-msg {
-  position:fixed;
+  position: absolute;
   top: 550px;
   left: 930px;
 }
