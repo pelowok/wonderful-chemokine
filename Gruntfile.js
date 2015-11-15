@@ -360,6 +360,7 @@ module.exports = function (grunt) {
   });
 
 
+
   grunt.registerTask('serve', 'start the server and preview your app', function (target) {
 
     if (target === 'dist') {
@@ -410,6 +411,7 @@ module.exports = function (grunt) {
     'usemin',
     'htmlmin'
   ]);
+
 
   grunt.registerTask('default', [
     'newer:eslint',

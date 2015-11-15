@@ -204,6 +204,15 @@ canvas {
 #q1{
   background: url(../images/Chap1Quiz.png) no-repeat 0px 0px;
 }
+#q2{
+  background: url(../images/Chap2Quiz.png) no-repeat 0px 0px;
+}
+#q3{
+  background: url(../images/Chap3Quiz.png) no-repeat 0px 0px;
+}
+#q4{
+  background: url(../images/Chap4Quiz.png) no-repeat 0px 0px;
+}
 
 .quiz .btn-container{
   position: absolute;
@@ -237,6 +246,16 @@ canvas {
 .q11b{
   background-image:url(../images/Chap1QuizImg1b.png);
 }
+.q21b{
+  background-image:url(../images/Chap2QuizImg1b.png);
+}
+.q31b{
+  background-image:url(../images/Chap3QuizImg1b.png);
+}
+.q41b{
+  background-image:url(../images/Chap4QuizImg1b.png);
+}
+
 .q12a{
   width: 344px;
   height: 364px;
@@ -245,6 +264,15 @@ canvas {
 .q12b{
   background-image:url(../images/Chap1QuizImg2b.png);
 }
+.q22b{
+  background-image:url(../images/Chap2QuizImg2b.png);
+}
+.q32b{
+  background-image:url(../images/Chap3QuizImg2b.png);
+}
+.q42b{
+  background-image:url(../images/Chap4QuizImg2b.png);
+}
 .q13a{
   width: 344px;
   height: 364px;
@@ -252,13 +280,33 @@ canvas {
 }
 .q13b{
   background-image:url(../images/Chap1QuizImg3b.png);
-}.q14a{
+}
+.q23b{
+  background-image:url(../images/Chap2QuizImg3b.png);
+}
+.q33b{
+  background-image:url(../images/Chap3QuizImg3b.png);
+}
+.q43b{
+  background-image:url(../images/Chap4QuizImg3b.png);
+}
+
+.q14a{
    width: 344px;
    height: 364px;
    transition: 0.5s linear;
  }
 .q14b{
   background-image:url(../images/Chap1QuizImg4b.png);
+}
+.q24b{
+  background-image:url(../images/Chap2QuizImg4b.png);
+}
+.q34b{
+  background-image:url(../images/Chap3QuizImg4b.png);
+}
+.q44b{
+  background-image:url(../images/Chap4QuizImg4b.png);
 }
 
 .quiz .btn-on {
@@ -368,6 +416,15 @@ canvas {
 
 #s1{
   background: url(../images/Chapter1Snapshot.png) no-repeat 0px 0px;
+}
+#s2{
+  background: url(../images/Chapter2Snapshot.png) no-repeat 0px 0px;
+}
+#s3{
+  background: url(../images/Chapter3Snapshot.png) no-repeat 0px 0px;
+}
+#s4{
+  background: url(../images/Chapter4Snapshot.png) no-repeat 0px 0px;
 }
 
 .snapshot .btn-container{

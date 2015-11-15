@@ -1,8 +1,4 @@
-/**
- * Created by zp on 11/15/2015.
- */
-
-arrControllers.S1Controller = function ($scope, $interval, $state, $sce) {
+arrControllers.SxController = function ($scope, $interval, $state, $sce) {
 
     console.log('S1Controller assigned');
 
@@ -17,7 +13,10 @@ arrControllers.S1Controller = function ($scope, $interval, $state, $sce) {
                 break;
             case 2:
                 var msg = document.querySelector('.img-msg');
-                msg.classList.add('fadeout');
+                if(msg){
+                    msg.classList.add('fadeout');
+                }
+
                 break;
             case 3:
                 $scope.showMsg = false;

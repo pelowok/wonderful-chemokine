@@ -65,7 +65,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
         views: {
             'layer2@c1': {
                 templateUrl: 'partials/s1.html',
-                controller: 'S1Controller'
+                controller: 'SxController'
             },
             'layer3@c1': {
                 templateUrl: '/partials/subnav.html',
@@ -131,7 +131,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
         views: {
             'layer2@c2': {
                 templateUrl: 'partials/s2.html',
-                controller: 'S2Controller'
+                controller: 'SxController'
             },
             'layer3@c2': {
                 templateUrl: '/partials/subnav.html',
@@ -197,7 +197,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
         views: {
             'layer2@c3': {
                 templateUrl: 'partials/s3.html',
-                controller: 'S3Controller'
+                controller: 'SxController'
             },
             'layer3@c3': {
                 templateUrl: '/partials/subnav.html',
@@ -219,7 +219,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
     }).state('c3.video', {
         url: '/video',
         views: {
-            'layer2@c4': {
+            'layer2@c3': {
                 templateUrl: 'partials/v3.html',
                 controller: 'V3Controller'
             }
@@ -263,7 +263,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
         views: {
             'layer2@c4': {
                 templateUrl: 'partials/s4.html',
-                controller: 'S4Controller'
+                controller: 'SxController'
             },
             'layer3@c4': {
                 templateUrl: '/partials/subnav.html',
