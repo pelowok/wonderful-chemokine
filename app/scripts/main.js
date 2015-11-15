@@ -92,6 +92,204 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
                 controller: 'V1Controller'
             }
         }
+    }).state('c2', {
+        url: '/c2',
+        views: {
+            'main': {
+                templateUrl: '/partials/ch.html'
+            },
+            'layer1@c2': {
+                templateUrl: '/partials/vid.html',
+                controller: 'C2Controller'
+            }
+        }
+    }).state('c2.tranz', {
+        url: '/tranz',
+        views: {
+            'layer1@c2': {
+                template: ''
+            },
+            'layer2@c2': {
+                templateUrl: 'partials/vid.html',
+                controller: 'Z2Controller'
+            }
+        }
+    }).state('c2.quiz', {
+        url: '/quiz',
+        views: {
+            'layer2@c2': {
+                templateUrl: 'partials/q2.html',
+                controller: 'Q2Controller'
+            },
+            'layer3@c2': {
+                templateUrl: '/partials/subnav.html',
+                controller: 'SubNavController'
+            }
+        }
+    }).state('c2.snapshot', {
+        url: '/snapshot',
+        views: {
+            'layer2@c2': {
+                templateUrl: 'partials/s2.html',
+                controller: 'S2Controller'
+            },
+            'layer3@c2': {
+                templateUrl: '/partials/subnav.html',
+                controller: 'SubNavController'
+            }
+        }
+    }).state('c2.teaser', {
+        url: '/teaser',
+        views: {
+            'layer2@c2': {
+                templateUrl: 'partials/t2.html',
+                controller: 'T2Controller'
+            },
+            'layer3@c2': {
+                templateUrl: '/partials/subnav.html',
+                controller: 'SubNavController'
+            }
+        }
+    }).state('c2.video', {
+        url: '/video',
+        views: {
+            'layer2@c2': {
+                templateUrl: 'partials/v2.html',
+                controller: 'V2Controller'
+            }
+        }
+    }).state('c3', {
+        url: '/c3',
+        views: {
+            'main': {
+                templateUrl: '/partials/ch.html'
+            },
+            'layer1@c3': {
+                templateUrl: '/partials/vid.html',
+                controller: 'C3Controller'
+            }
+        }
+    }).state('c3.tranz', {
+        url: '/tranz',
+        views: {
+            'layer1@c3': {
+                template: ''
+            },
+            'layer2@c3': {
+                templateUrl: 'partials/vid.html',
+                controller: 'Z3Controller'
+            }
+        }
+    }).state('c3.quiz', {
+        url: '/quiz',
+        views: {
+            'layer2@c3': {
+                templateUrl: 'partials/q3.html',
+                controller: 'Q3Controller'
+            },
+            'layer3@c3': {
+                templateUrl: '/partials/subnav.html',
+                controller: 'SubNavController'
+            }
+        }
+    }).state('c3.snapshot', {
+        url: '/snapshot',
+        views: {
+            'layer2@c3': {
+                templateUrl: 'partials/s3.html',
+                controller: 'S3Controller'
+            },
+            'layer3@c3': {
+                templateUrl: '/partials/subnav.html',
+                controller: 'SubNavController'
+            }
+        }
+    }).state('c3.teaser', {
+        url: '/teaser',
+        views: {
+            'layer2@c3': {
+                templateUrl: 'partials/t3.html',
+                controller: 'T3Controller'
+            },
+            'layer3@c3': {
+                templateUrl: '/partials/subnav.html',
+                controller: 'SubNavController'
+            }
+        }
+    }).state('c3.video', {
+        url: '/video',
+        views: {
+            'layer2@c4': {
+                templateUrl: 'partials/v3.html',
+                controller: 'V3Controller'
+            }
+        }
+    }).state('c4', {
+        url: '/c4',
+        views: {
+            'main': {
+                templateUrl: '/partials/ch.html'
+            },
+            'layer1@c4': {
+                templateUrl: '/partials/vid.html',
+                controller: 'C4Controller'
+            }
+        }
+    }).state('c4.tranz', {
+        url: '/tranz',
+        views: {
+            'layer1@c4': {
+                template: ''
+            },
+            'layer2@c4': {
+                templateUrl: 'partials/vid.html',
+                controller: 'Z4Controller'
+            }
+        }
+    }).state('c4.quiz', {
+        url: '/quiz',
+        views: {
+            'layer2@c4': {
+                templateUrl: 'partials/q4.html',
+                controller: 'Q4Controller'
+            },
+            'layer3@c4': {
+                templateUrl: '/partials/subnav.html',
+                controller: 'SubNavController'
+            }
+        }
+    }).state('c4.snapshot', {
+        url: '/snapshot',
+        views: {
+            'layer2@c4': {
+                templateUrl: 'partials/s4.html',
+                controller: 'S4Controller'
+            },
+            'layer3@c4': {
+                templateUrl: '/partials/subnav.html',
+                controller: 'SubNavController'
+            }
+        }
+    }).state('c4.teaser', {
+        url: '/teaser',
+        views: {
+            'layer2@c4': {
+                templateUrl: 'partials/t4.html',
+                controller: 'T4Controller'
+            },
+            'layer3@c4': {
+                templateUrl: '/partials/subnav.html',
+                controller: 'SubNavController'
+            }
+        }
+    }).state('c4.video', {
+        url: '/video',
+        views: {
+            'layer2@c4': {
+                templateUrl: 'partials/v4.html',
+                controller: 'V4Controller'
+            }
+        }
     }).state('fullvideo', {
         url: '/fullvideo',
         views: {
