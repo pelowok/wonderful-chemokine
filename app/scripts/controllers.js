@@ -48,6 +48,11 @@ arrControllers.MainController = function($scope, $state){
         }
     }
 
+    $scope.showFullVideo = function(){
+        console.log('showFullVideo() fired');
+        $state.transitionTo('fullvideo');
+    }
+
 };
 
 arrControllers.MainMenuController = function($scope, $state, $sce) {
@@ -89,16 +94,6 @@ arrControllers.MainMenuController = function($scope, $state, $sce) {
             $scope.menuactive = false;
             console.log('Math.round($currenttime) reached 25 : menu inactive : ' + currentTime);
         }
-
-        //if (currentTime === 25) {
-        //    $scope.menuactive = false;
-        //    console.log('Math.round($currenttime) reached 25 : menu inactive : ' + currentTime);
-        //}
-
-        //if (currentTime === 25) {
-        //    $scope.$API.pause();
-        //    console.log('Math.round($currenttime) reached 25 : ' + currentTime);
-        //}
     };
 
     $scope.restart = function () {
@@ -108,10 +103,10 @@ arrControllers.MainMenuController = function($scope, $state, $sce) {
     };
 
     $scope.btnImg = [
-        { btn: 'mm_s1', img: '/images/red.png', state: 'c1.quiz' },
-        { btn: 'mm_s2', img: '/images/red.png', state: 'ch21' },
-        { btn: 'mm_s3', img: '/images/red.png', state: 'ch31' },
-        { btn: 'mm_s4', img: '/images/red.png', state: 'ch41' }
+        { btn: 'mm_s1', img: '/images/blank.png', state: 'c1.tranz' },
+        { btn: 'mm_s2', img: '/images/blank.png', state: 'ch21' },
+        { btn: 'mm_s3', img: '/images/blank.png', state: 'ch31' },
+        { btn: 'mm_s4', img: '/images/blank.png', state: 'ch41' }
     ];
 
     $scope.navTo = function(state){
@@ -135,7 +130,6 @@ arrControllers.SubNavController = function($scope, $state, $sce) {
 
 }
 
-
 arrControllers.AttractController = function($sce, $scope, $interval, $state) {
 
     console.log('AttractController assigned');
@@ -145,11 +139,9 @@ arrControllers.AttractController = function($sce, $scope, $interval, $state) {
     $scope.onPlayerReady = function ($API) {
         console.log('onPlayerReady fired');
         $scope.$API = $API;
-        //$API.seekTime(4);
-        //$API.play();
     };
 
-    $scope.attractConfig = {
+    $scope.config = {
         sources: [
             {
                 src: $sce.trustAsResourceUrl("/video/attract.mp4"),
@@ -164,34 +156,13 @@ arrControllers.AttractController = function($sce, $scope, $interval, $state) {
         autoPlay: true
     };
 
-
-
-    $scope.checkAttractTime = function ($currentTime, $duration) {
-
-        var currentTime = Math.round($currentTime);
-
-        console.log(currentTime);
-
-        if (currentTime === 30) {
-            $scope.$API.pause();
-            console.log('Math.round($currenttime) reached 30 : ' + currentTime);
-            $state.transitionTo('attractpause');
-        }
-    };
-
-    $scope.restartAttract = function () {
-        console.log('$scope.restartAttract fired');
-        //$scope.$API.play();
+    $scope.complete = function () {
         $state.transitionTo('mainmenu');
     };
 
 };
 
 arrControllers.BigBlueBallController = function($scope, $state) {
-
-
-
-
 
     console.log('bigblueball potato');
 
@@ -225,16 +196,6 @@ arrControllers.C1Controller  = function($scope, $state, $sce) {
 
     console.log('C1Controller fired');
 
-    var states = ['A', 'B'];
-    $scope.states = states;
-    $scope.currentState = 'A';
-    $scope.foo = true;
-
-    $scope.doStuff = function(toState) {
-        $scope.currentState = toState;
-        console.log($scope.currentState);
-    };
-
     $scope.API = null;
 
     $scope.onPlayerReady = function ($API) {
@@ -242,126 +203,30 @@ arrControllers.C1Controller  = function($scope, $state, $sce) {
         $scope.$API = $API;
     };
 
-    $scope.videos = [
-        {
-            sources: [
-                { src: $sce.trustAsResourceUrl("/video/transition1.mp4"), type: "video/mp4" }
-            ]
-        },
-        {
-            sources: [
-                { src: $sce.trustAsResourceUrl("/video/bgloop1.mp4"), type: "video/mp4" }
-            ]
-        },
-        {
-            sources: [
-                { src: $sce.trustAsResourceUrl("/video/teaser1.mp4"), type: "video/mp4" }
-                //{ src: $sce.trustAsResourceUrl("/video/teaser1.mp4"), type: "video/mp4" }
-            ]
-        },
-        {
-            sources: [
-                { src: $sce.trustAsResourceUrl("/video/bgloop1.mp4"), type: "video/mp4" }
-                //{ src: $sce.trustAsResourceUrl("/video/segment1.mp4"), type: "video/mp4" }
-            ]
-        }
-    ];
-
     $scope.config = {
-        sources: $scope.videos[0].sources,
+        sources: [
+            {
+                src: $sce.trustAsResourceUrl("/video/bgloop1.mp4"),
+                type: "video/mp4"
+            }
+        ],
+        theme: "/bower_components/videogular-themes-default/videogular.css",
+        plugins: {
+            poster: "http://www.videogular.com/assets/images/videogular.png"
+        },
         autoPlay: true
-    }
-
-    $scope.setVideo = function (videosIndex) {
-        console.log('$scope.complete fired. $state.includes(c1) : ' + $state.includes('c1'));
-        if(videosIndex){
-            $scope.config.sources = $scope.videos[videosIndex].sources;
-        } else {
-            $scope.config.sources = $scope.videos[$scope.partThisIs].sources;
-        }
-
-        $scope.$API.play();
     };
 
     $scope.complete = function () {
-        switch($scope.partThisIs){
-            case 0:
-                $scope.config.sources = $scope.videos[1].sources;
-                $scope.nextPart();
-
-                //console.log('$scope.partThisIs : ' + $scope.partThisIs);
-                //$scope.$API.play();
-                $scope.setVideo();
-                break;
-            case 1:
-            case 2:
-                //console.log('$scope.partThisIs : ' + $scope.partThisIs);
-                //$scope.$API.play();
-                $scope.setVideo();
-                break;
-            case 3:
-                $scope.$API.pause();
-                break;
-            default:
-                console.log('$scope.complete fell to default. Catch me if you can.');
-                break;
-        }
-        //console.log('$scope.config.sources : ' + $scope.config.sources.src);
-        //$scope.partThisIs += 1;
-        //console.log('$scope.partThisIs : ' + $scope.partThisIs);
-        //$scope.setVideo();
+        $scope.$API.play();
     };
 
 };
-//arrControllers.Ch11Controller  = function($scope, $state, $sce) {
-//
-//    console.log('Ch11Controller fired');
-//
-//    $scope.API = null;
-//
-//    $scope.onPlayerReady = function ($API) {
-//        console.log('onPlayerReady fired');
-//        $scope.$API = $API;
-//    };
-//
-//    $scope.config = {
-//        sources: [
-//            {
-//                src: $sce.trustAsResourceUrl("/video/ch1.mp4"),
-//                type: "video/mp4"
-//            }
-//        ],
-//        theme: "/bower_components/videogular-themes-default/videogular.css",
-//        plugins: {
-//            poster: "http://www.videogular.com/assets/images/videogular.png"
-//        },
-//        autoPlay: true
-//    };
-//
-//    $scope.playedOnce = false;
-//
-//    $scope.complete = function () {
-//        console.log('$scope.complete fired');
-//        $scope.$API.play();
-//        //$state.go('ch11.2', {reload:false});
-//        //$state.go('ch12');
-//        if(!$scope.playedOnce){
-//            $scope.playedOnce = true;
-//            console.log('CHANGE STATE TO SHOW QUIZ NOW');
-//            $state.transitionTo('c1.q1');
-//        }
-//    };
-//
-//    $scope.navTo = function(state){
-//        console.log('$scope.navTo(state) : ' + state);
-//        $state.go(state);
-//    }
-//}
-
-arrControllers.Ch12Controller = function($scope, $state, $sce) {
 
 
-    console.log('Ch12Controller assigned');
+arrControllers.Z1Controller  = function($scope, $state, $sce) {
+
+    console.log('Z1Controller fired');
 
     $scope.API = null;
 
@@ -373,7 +238,7 @@ arrControllers.Ch12Controller = function($scope, $state, $sce) {
     $scope.config = {
         sources: [
             {
-                src: $sce.trustAsResourceUrl("/video/ch1.mp4"),
+                src: $sce.trustAsResourceUrl("/video/Transition_1.mp4"),
                 type: "video/mp4"
             }
         ],
@@ -384,14 +249,12 @@ arrControllers.Ch12Controller = function($scope, $state, $sce) {
         autoPlay: true
     };
 
-
-
     $scope.complete = function () {
-        console.log('$scope.complete fired');
-        $scope.$API.play();
+        //$scope.$API.play();
+        $scope.navTo('c1.quiz');
     };
 
-}
+};
 
 arrControllers.Q1Controller = function ($scope, $interval, $state, $sce){
 
@@ -507,10 +370,7 @@ arrControllers.Q1Controller = function ($scope, $interval, $state, $sce){
         msgReps++;
     }, 2000, 4);
 
-    $scope.showFullVideo = function(){
-        console.log('showFullVideo() fired');
-        $state.transitionTo('fullvideo');
-    }
+
 
 
 
