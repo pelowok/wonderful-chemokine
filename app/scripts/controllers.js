@@ -85,14 +85,14 @@ arrControllers.MainMenuController = function($scope, $state, $sce) {
 
         var currentTime = Math.round($currentTime);
 
-        console.log(currentTime);
+        //console.log(currentTime);
 
         if (currentTime >= 6 && currentTime <=27) {
             $scope.menuactive = true;
-            console.log('Math.round($currenttime) reached 4 : menu active : ' + currentTime);
+            //console.log('Math.round($currenttime) reached 4 : menu active : ' + currentTime);
         } else {
             $scope.menuactive = false;
-            console.log('Math.round($currenttime) reached 25 : menu inactive : ' + currentTime);
+            //console.log('Math.round($currenttime) reached 25 : menu inactive : ' + currentTime);
         }
     };
 
@@ -484,6 +484,8 @@ arrControllers.FullVideoController = function($sce, $scope, $interval, $state) {
     $scope.onPlayerReady = function ($API) {
         console.log('onPlayerReady fired');
         $scope.$API = $API;
+        $scope.$API.seekTime(4);
+        $scope.$API.play();
     };
 
 
