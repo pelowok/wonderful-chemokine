@@ -132,7 +132,7 @@ arrControllers.Q2Controller = function ($scope, $interval, $state, $sce){
 
     $scope.evaluateQuiz = function(){
 
-        $scope.allCorrect = $scope.currentState1==true && $scope.currentState2==true && $scope.currentState3==true && $scope.currentState4 == false;
+        $scope.allCorrect = $scope.currentState1==true && $scope.currentState2==true && $scope.currentState3==false && $scope.currentState4 == true;
 
         console.log('allCorrect : ' + $scope.allCorrect);
 
@@ -219,7 +219,7 @@ arrControllers.Q3Controller = function ($scope, $interval, $state, $sce){
 
     $scope.evaluateQuiz = function(){
 
-        $scope.allCorrect = $scope.currentState1==true && $scope.currentState2==true && $scope.currentState3==true && $scope.currentState4 == false;
+        $scope.allCorrect = $scope.currentState1==false && $scope.currentState2==false && $scope.currentState3==true && $scope.currentState4 == true;
 
         console.log('allCorrect : ' + $scope.allCorrect);
 
