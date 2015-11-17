@@ -2,18 +2,6 @@ var arrControllers = {};
 
 arrControllers.MainController = function($scope, $state){
 
-    $scope.partThisIs = 0;
-
-    $scope.nextPart = function(){
-        $scope.partThisIs += 1;
-    }
-
-    $scope.whatPartIsThis = function(guess){
-
-        return (guess === $scope.partThisIs);
-
-    }
-
     $scope.navTo = function (page) {
         $state.transitionTo(page);
     };

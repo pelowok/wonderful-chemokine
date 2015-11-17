@@ -39,6 +39,7 @@ arrControllers.T1Controller = function ($scope, $interval, $state, $sce) {
 arrControllers.T2Controller = function ($scope, $interval, $state, $sce) {
     console.log('T2Controller assigned');
 
+
     $scope.API = null;
 
     $scope.onPlayerReady = function ($API) {
@@ -72,6 +73,7 @@ arrControllers.T2Controller = function ($scope, $interval, $state, $sce) {
 
 arrControllers.T3Controller = function ($scope, $interval, $state, $sce) {
     console.log('T3Controller assigned');
+
 
     $scope.API = null;
 
@@ -112,9 +114,9 @@ arrControllers.T4Controller = function ($scope, $interval, $state, $sce) {
     $scope.onPlayerReady = function ($API) {
         console.log('onPlayerReady fired');
         $scope.$API = $API;
+
+
     };
-
-
 
     $scope.complete = function () {
         console.log('$scope.complete fired');

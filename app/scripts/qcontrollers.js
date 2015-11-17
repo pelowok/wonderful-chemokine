@@ -81,7 +81,7 @@ arrControllers.Q1Controller = function ($scope, $interval, $state, $sce){
 
         console.log('msgReps : ' + msgReps);
         msgReps++;
-    }, 2000, 4);
+    }, 1000, 4);
 
 }
 
@@ -168,7 +168,7 @@ arrControllers.Q2Controller = function ($scope, $interval, $state, $sce){
 
         console.log('msgReps : ' + msgReps);
         msgReps++;
-    }, 2000, 4);
+    }, 1000, 4);
 
 }
 
@@ -255,7 +255,7 @@ arrControllers.Q3Controller = function ($scope, $interval, $state, $sce){
 
         console.log('msgReps : ' + msgReps);
         msgReps++;
-    }, 2000, 4);
+    }, 1000, 4);
 
 }
 
@@ -342,6 +342,6 @@ arrControllers.Q4Controller = function ($scope, $interval, $state, $sce){
 
         console.log('msgReps : ' + msgReps);
         msgReps++;
-    }, 2000, 4);
+    }, 1000, 4);
 
 }

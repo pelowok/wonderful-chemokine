@@ -2,9 +2,12 @@
  * Created by zp on 11/15/2015.
  */
 
-arrControllers.AttractController = function($sce, $scope, $interval, $state) {
+arrControllers.AttractController = function($sce, $scope, $interval, $state, $rootScope) {
 
     console.log('AttractController assigned');
+
+    $rootScope.isChapterNumber = 0;
+    console.log('$rootScope.isChapterNumber : ' + $rootScope.isChapterNumber);
 
     $scope.API = null;
 

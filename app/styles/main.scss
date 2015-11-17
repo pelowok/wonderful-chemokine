@@ -186,8 +186,20 @@ canvas {
 .btn-side-menu {
   width: 700px;
   height: 148px;
+  border-radius: 12px;
 }
-
+.side-menu-sm {
+  position: absolute;
+  width: 150px;
+  padding: 5px;
+  top: 435px;
+  right: 16px;
+}
+.btn-side-menu-sm {
+  width: 148px;
+  height: 148px;
+  border-radius: 90px;
+}
 .quiz {
   width: 1920px;
   height: 1080px;

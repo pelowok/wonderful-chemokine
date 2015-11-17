@@ -1,9 +1,12 @@
 /**
  * Created by zp on 11/15/2015.
  */
-arrControllers.Z1Controller  = function($scope, $state, $sce) {
+arrControllers.Z1Controller  = function($scope, $state, $sce, $rootScope) {
 
     console.log('Z1Controller fired');
+
+    $rootScope.isChapterNumber = 1;
+    console.log('$rootScope.isChapterNumber : ' + $rootScope.isChapterNumber);
 
     $scope.API = null;
 
@@ -33,9 +36,12 @@ arrControllers.Z1Controller  = function($scope, $state, $sce) {
 
 };
 
-arrControllers.Z2Controller  = function($scope, $state, $sce) {
+arrControllers.Z2Controller  = function($scope, $state, $sce, $rootScope) {
 
     console.log('Z2Controller fired');
+
+    $rootScope.isChapterNumber = 2;
+    console.log('$rootScope.isChapterNumber : ' + $rootScope.isChapterNumber);
 
     $scope.API = null;
 
@@ -65,9 +71,12 @@ arrControllers.Z2Controller  = function($scope, $state, $sce) {
 
 };
 
-arrControllers.Z3Controller  = function($scope, $state, $sce) {
+arrControllers.Z3Controller  = function($scope, $state, $sce, $rootScope) {
 
     console.log('Z3Controller fired');
+
+    $rootScope.isChapterNumber = 3;
+    console.log('$rootScope.isChapterNumber : ' + $rootScope.isChapterNumber);
 
     $scope.API = null;
 
@@ -97,9 +106,12 @@ arrControllers.Z3Controller  = function($scope, $state, $sce) {
 
 };
 
-arrControllers.Z4Controller  = function($scope, $state, $sce) {
+arrControllers.Z4Controller  = function($scope, $state, $sce, $rootScope) {
 
     console.log('Z4Controller fired');
+
+    $rootScope.isChapterNumber = 4;
+    console.log('$rootScope.isChapterNumber : ' + $rootScope.isChapterNumber);
 
     $scope.API = null;
 

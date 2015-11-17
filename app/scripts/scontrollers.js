@@ -27,6 +27,6 @@ arrControllers.SxController = function ($scope, $interval, $state, $sce) {
 
         console.log('msgReps : ' + msgReps);
         msgReps++;
-    }, 2000, 4);
+    }, 1000, 4);
 
 }

@@ -18,13 +18,34 @@
          data-ng-show="boolSideNavOpen">
 </div>
 
-<div class="side-menu" data-ng-show="boolSideNavOpen">
-    <img class="btn-side-menu" data-ng-src="images/blank.png" alt="" data-ng-click="navTo('c1.tranz')">
-    <img class="btn-side-menu" data-ng-src="images/blank.png" alt="" data-ng-click="navTo('c2.tranz')">
-    <img class="btn-side-menu" data-ng-src="images/blank.png" alt="" data-ng-click="navTo('c3.tranz')">
-    <img class="btn-side-menu" data-ng-src="images/blank.png" alt="" data-ng-click="navTo('c4.tranz')">
+<div class="side-menu-sm" data-ng-hide="boolSideNavOpen">
+    <img ng-show="isChapterNumber === 1" class="btn-side-menu-sm" data-ng-src="images/white.png" ng-click="flipSubNav()">
+    <img ng-hide="isChapterNumber === 1" class="btn-side-menu-sm" data-ng-src="images/blank.png" ng-click="flipSubNav()">
 
+    <img ng-show="isChapterNumber === 2"  class="btn-side-menu-sm" data-ng-src="images/white.png" ng-click="flipSubNav()">
+    <img ng-hide="isChapterNumber === 2"  class="btn-side-menu-sm" data-ng-src="images/blank.png" ng-click="flipSubNav()">
+
+    <img ng-show="isChapterNumber === 3"  class="btn-side-menu-sm" data-ng-src="images/white.png" ng-click="flipSubNav()">
+    <img ng-hide="isChapterNumber === 3"  class="btn-side-menu-sm" data-ng-src="images/blank.png" ng-click="flipSubNav()">
+
+    <img ng-show="isChapterNumber === 4"  class="btn-side-menu-sm" data-ng-src="images/white.png" ng-click="flipSubNav()">
+    <img ng-hide="isChapterNumber === 4"  class="btn-side-menu-sm" data-ng-src="images/blank.png" ng-click="flipSubNav()">
 </div>
+
+<div class="side-menu" data-ng-show="boolSideNavOpen">
+    <img ng-show="isChapterNumber === 1" class="btn-side-menu" data-ng-src="images/white.png"  ng-click="flipSubNav()">
+    <img ng-hide="isChapterNumber === 1" class="btn-side-menu" data-ng-src="images/blank.png" alt="" data-ng-click="navTo('c1.tranz')">
+
+    <img ng-show="isChapterNumber === 2"  class="btn-side-menu" data-ng-src="images/white.png" ng-click="flipSubNav()">
+    <img ng-hide="isChapterNumber === 2"  class="btn-side-menu" data-ng-src="images/blank.png" alt="" data-ng-click="navTo('c2.tranz')">
+
+    <img ng-show="isChapterNumber === 3"  class="btn-side-menu" data-ng-src="images/white.png" ng-click="flipSubNav()">
+    <img ng-hide="isChapterNumber === 3"  class="btn-side-menu" data-ng-src="images/blank.png" alt="" data-ng-click="navTo('c3.tranz')">
+
+    <img ng-show="isChapterNumber === 4"  class="btn-side-menu" data-ng-src="images/white.png" ng-click="flipSubNav()">
+    <img ng-hide="isChapterNumber === 4"  class="btn-side-menu" data-ng-src="images/blank.png" alt="" data-ng-click="navTo('c4.tranz')">
+</div>
+
 
 
 <!--</div>-->

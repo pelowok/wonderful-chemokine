@@ -2,9 +2,12 @@
  * Created by zp on 11/15/2015.
  */
 
-arrControllers.MainMenuController = function($scope, $state, $sce) {
+arrControllers.MainMenuController = function($scope, $state, $sce, $rootScope) {
 
     console.log('MainMenuController fired');
+
+    $rootScope.isChapterNumber = 0;
+    console.log('$rootScope.isChapterNumber : ' + $rootScope.isChapterNumber);
 
     $scope.API = null;
 
