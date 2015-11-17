@@ -23,12 +23,12 @@ arrControllers.T1Controller = function ($scope, $interval, $state, $sce) {
     $scope.config = {
         sources: [
             {
-                src: $sce.trustAsResourceUrl("/video/Teaser_1.mp4"),
+                src: $sce.trustAsResourceUrl("video/Teaser_1.mp4"),
                 type: "video/mp4",
                 ngClick: "videoComplete()"
             }
         ],
-        theme: "/bower_components/videogular-themes-default/videogular.css",
+        theme: "bower_components/videogular-themes-default/videogular.css",
         plugins: {
             poster: "http://www.videogular.com/assets/images/videogular.png"
         },
@@ -58,12 +58,12 @@ arrControllers.T2Controller = function ($scope, $interval, $state, $sce) {
     $scope.config = {
         sources: [
             {
-                src: $sce.trustAsResourceUrl("/video/Teaser_2.mp4"),
+                src: $sce.trustAsResourceUrl("video/Teaser_2.mp4"),
                 type: "video/mp4",
                 ngClick: "videoComplete()"
             }
         ],
-        theme: "/bower_components/videogular-themes-default/videogular.css",
+        theme: "bower_components/videogular-themes-default/videogular.css",
         plugins: {
             poster: "http://www.videogular.com/assets/images/videogular.png"
         },
@@ -93,12 +93,12 @@ arrControllers.T3Controller = function ($scope, $interval, $state, $sce) {
     $scope.config = {
         sources: [
             {
-                src: $sce.trustAsResourceUrl("/video/Teaser_3.mp4"),
+                src: $sce.trustAsResourceUrl("video/Teaser_3.mp4"),
                 type: "video/mp4",
                 ngClick: "videoComplete()"
             }
         ],
-        theme: "/bower_components/videogular-themes-default/videogular.css",
+        theme: "bower_components/videogular-themes-default/videogular.css",
         plugins: {
             poster: "http://www.videogular.com/assets/images/videogular.png"
         },
@@ -127,12 +127,12 @@ arrControllers.T4Controller = function ($scope, $interval, $state, $sce) {
     $scope.config = {
         sources: [
             {
-                src: $sce.trustAsResourceUrl("/video/Teaser_4.mp4"),
+                src: $sce.trustAsResourceUrl("video/Teaser_4.mp4"),
                 type: "video/mp4",
                 ngClick: "videoComplete()"
             }
         ],
-        theme: "/bower_components/videogular-themes-default/videogular.css",
+        theme: "bower_components/videogular-themes-default/videogular.css",
         plugins: {
             poster: "http://www.videogular.com/assets/images/videogular.png"
         },

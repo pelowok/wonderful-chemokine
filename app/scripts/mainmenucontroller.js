@@ -20,11 +20,11 @@ arrControllers.MainMenuController = function($scope, $state, $sce, $rootScope) {
     $scope.mainmenuConfig = {
         sources: [
             {
-                src: $sce.trustAsResourceUrl("/video/mainmenu.mp4"),
+                src: $sce.trustAsResourceUrl("video/mainmenu.mp4"),
                 type: "video/mp4"
             }
         ],
-        theme: "/bower_components/videogular-themes-default/videogular.css",
+        theme: "bower_components/videogular-themes-default/videogular.css",
         plugins: {
             poster: "http://www.videogular.com/assets/images/videogular.png"
         },

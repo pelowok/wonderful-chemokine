@@ -14,7 +14,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
         url: '/mainmenu',
         views: {
             'main': {
-                templateUrl: '/partials/mainmenu.html',
+                templateUrl: 'partials/mainmenu.html',
                 controller: 'MainMenuController'
             }
         }
@@ -22,7 +22,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
         url: '/attract',
         views: {
             'main': {
-                templateUrl: '/partials/fullvideo.html',
+                templateUrl: 'partials/fullvideo.html',
                 controller: 'AttractController'
             }
         }
@@ -30,10 +30,10 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
         url: '/c1',
         views: {
             'main': {
-                templateUrl: '/partials/ch.html'
+                templateUrl: 'partials/ch.html'
             },
             'layer1@c1': {
-                templateUrl: '/partials/vid.html',
+                templateUrl: 'partials/vid.html',
                 controller: 'C1Controller'
             }
         }
@@ -56,7 +56,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
                 controller: 'Q1Controller'
             },
             'layer3@c1': {
-                templateUrl: '/partials/subnav.html',
+                templateUrl: 'partials/subnav.html',
                 controller: 'SubNavController'
             }
         }
@@ -68,7 +68,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
                 controller: 'SxController'
             },
             'layer3@c1': {
-                templateUrl: '/partials/subnav.html',
+                templateUrl: 'partials/subnav.html',
                 controller: 'SubNavController'
             }
         }
@@ -80,7 +80,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
                 controller: 'T1Controller'
             },
             'layer3@c1': {
-                templateUrl: '/partials/subnav.html',
+                templateUrl: 'partials/subnav.html',
                 controller: 'SubNavController'
             }
         }
@@ -96,10 +96,10 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
         url: '/c2',
         views: {
             'main': {
-                templateUrl: '/partials/ch.html'
+                templateUrl: 'partials/ch.html'
             },
             'layer1@c2': {
-                templateUrl: '/partials/vid.html',
+                templateUrl: 'partials/vid.html',
                 controller: 'C2Controller'
             }
         }
@@ -122,7 +122,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
                 controller: 'Q2Controller'
             },
             'layer3@c2': {
-                templateUrl: '/partials/subnav.html',
+                templateUrl: 'partials/subnav.html',
                 controller: 'SubNavController'
             }
         }
@@ -134,7 +134,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
                 controller: 'SxController'
             },
             'layer3@c2': {
-                templateUrl: '/partials/subnav.html',
+                templateUrl: 'partials/subnav.html',
                 controller: 'SubNavController'
             }
         }
@@ -146,7 +146,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
                 controller: 'T2Controller'
             },
             'layer3@c2': {
-                templateUrl: '/partials/subnav.html',
+                templateUrl: 'partials/subnav.html',
                 controller: 'SubNavController'
             }
         }
@@ -162,10 +162,10 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
         url: '/c3',
         views: {
             'main': {
-                templateUrl: '/partials/ch.html'
+                templateUrl: 'partials/ch.html'
             },
             'layer1@c3': {
-                templateUrl: '/partials/vid.html',
+                templateUrl: 'partials/vid.html',
                 controller: 'C3Controller'
             }
         }
@@ -188,7 +188,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
                 controller: 'Q3Controller'
             },
             'layer3@c3': {
-                templateUrl: '/partials/subnav.html',
+                templateUrl: 'partials/subnav.html',
                 controller: 'SubNavController'
             }
         }
@@ -200,7 +200,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
                 controller: 'SxController'
             },
             'layer3@c3': {
-                templateUrl: '/partials/subnav.html',
+                templateUrl: 'partials/subnav.html',
                 controller: 'SubNavController'
             }
         }
@@ -212,7 +212,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
                 controller: 'T3Controller'
             },
             'layer3@c3': {
-                templateUrl: '/partials/subnav.html',
+                templateUrl: 'partials/subnav.html',
                 controller: 'SubNavController'
             }
         }
@@ -228,10 +228,10 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
         url: '/c4',
         views: {
             'main': {
-                templateUrl: '/partials/ch.html'
+                templateUrl: 'partials/ch.html'
             },
             'layer1@c4': {
-                templateUrl: '/partials/vid.html',
+                templateUrl: 'partials/vid.html',
                 controller: 'C4Controller'
             }
         }
@@ -254,7 +254,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
                 controller: 'Q4Controller'
             },
             'layer3@c4': {
-                templateUrl: '/partials/subnav.html',
+                templateUrl: 'partials/subnav.html',
                 controller: 'SubNavController'
             }
         }
@@ -266,7 +266,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
                 controller: 'SxController'
             },
             'layer3@c4': {
-                templateUrl: '/partials/subnav.html',
+                templateUrl: 'partials/subnav.html',
                 controller: 'SubNavController'
             }
         }
@@ -278,7 +278,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
                 controller: 'T4Controller'
             },
             'layer3@c4': {
-                templateUrl: '/partials/subnav.html',
+                templateUrl: 'partials/subnav.html',
                 controller: 'SubNavController'
             }
         }
@@ -294,7 +294,7 @@ infiApp.config(function ($stateProvider, $urlRouterProvider) {
         url: '/fullvideo',
         views: {
             'main': {
-                templateUrl: '/partials/fullvideo.html',
+                templateUrl: 'partials/fullvideo.html',
                 controller: 'FullVideoController'
             }
         }

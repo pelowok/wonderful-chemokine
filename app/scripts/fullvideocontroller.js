@@ -23,12 +23,12 @@ arrControllers.FullVideoController = function($sce, $scope, $interval, $state) {
     $scope.config = {
         sources: [
             {
-                src: $sce.trustAsResourceUrl("/video/fullvideo.mp4"),
+                src: $sce.trustAsResourceUrl("video/fullvideo.mp4"),
                 type: "video/mp4",
                 ngClick: "videoComplete()"
             }
         ],
-        theme: "/bower_components/videogular-themes-default/videogular.css",
+        theme: "bower_components/videogular-themes-default/videogular.css",
         plugins: {
             poster: "http://www.videogular.com/assets/images/videogular.png"
         },

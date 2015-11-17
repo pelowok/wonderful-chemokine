@@ -19,12 +19,12 @@ arrControllers.AttractController = function($sce, $scope, $interval, $state, $ro
     $scope.config = {
         sources: [
             {
-                src: $sce.trustAsResourceUrl("/video/attract.mp4"),
+                src: $sce.trustAsResourceUrl("video/attract.mp4"),
                 type: "video/mp4",
                 ngClick: "navTo('mainmenu')"
             }
         ],
-        theme: "/bower_components/videogular-themes-default/videogular.css",
+        theme: "bower_components/videogular-themes-default/videogular.css",
         plugins: {
             poster: "http://www.videogular.com/assets/images/videogular.png"
         },

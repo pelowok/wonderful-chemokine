@@ -18,11 +18,11 @@ arrControllers.Z1Controller  = function($scope, $state, $sce, $rootScope) {
     $scope.config = {
         sources: [
             {
-                src: $sce.trustAsResourceUrl("/video/Transition_1.mp4"),
+                src: $sce.trustAsResourceUrl("video/Transition_1.mp4"),
                 type: "video/mp4"
             }
         ],
-        theme: "/bower_components/videogular-themes-default/videogular.css",
+        theme: "bower_components/videogular-themes-default/videogular.css",
         plugins: {
             poster: "http://www.videogular.com/assets/images/videogular.png"
         },
@@ -53,11 +53,11 @@ arrControllers.Z2Controller  = function($scope, $state, $sce, $rootScope) {
     $scope.config = {
         sources: [
             {
-                src: $sce.trustAsResourceUrl("/video/Transition_2.mp4"),
+                src: $sce.trustAsResourceUrl("video/Transition_2.mp4"),
                 type: "video/mp4"
             }
         ],
-        theme: "/bower_components/videogular-themes-default/videogular.css",
+        theme: "bower_components/videogular-themes-default/videogular.css",
         plugins: {
             poster: "http://www.videogular.com/assets/images/videogular.png"
         },
@@ -88,11 +88,11 @@ arrControllers.Z3Controller  = function($scope, $state, $sce, $rootScope) {
     $scope.config = {
         sources: [
             {
-                src: $sce.trustAsResourceUrl("/video/Transition_3.mp4"),
+                src: $sce.trustAsResourceUrl("video/Transition_3.mp4"),
                 type: "video/mp4"
             }
         ],
-        theme: "/bower_components/videogular-themes-default/videogular.css",
+        theme: "bower_components/videogular-themes-default/videogular.css",
         plugins: {
             poster: "http://www.videogular.com/assets/images/videogular.png"
         },
@@ -123,11 +123,11 @@ arrControllers.Z4Controller  = function($scope, $state, $sce, $rootScope) {
     $scope.config = {
         sources: [
             {
-                src: $sce.trustAsResourceUrl("/video/Transition_4.mp4"),
+                src: $sce.trustAsResourceUrl("video/Transition_4.mp4"),
                 type: "video/mp4"
             }
         ],
-        theme: "/bower_components/videogular-themes-default/videogular.css",
+        theme: "bower_components/videogular-themes-default/videogular.css",
         plugins: {
             poster: "http://www.videogular.com/assets/images/videogular.png"
         },
