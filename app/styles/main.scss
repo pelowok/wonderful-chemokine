@@ -54,10 +54,11 @@ body {
 }
 .subnav-img {
   position: absolute;
-  //display: inline-block;
   bottom: 0px;
   right: 0px;
-  //z-index: 21;
+  img {
+    vertical-align: bottom;
+  }
 }
 .subnav-text {
   position: absolute;
@@ -65,7 +66,9 @@ body {
   //right: -1930px;
   opacity: 0;
   transition: transform .3s ease;
-  //z-index: 20;
+  img {
+    vertical-align: bottom;
+  }
 }
 .shownav{
   //transition: 0.3s ease;
@@ -175,7 +178,7 @@ canvas {
   position: absolute;
   width: 710px;
   padding: 5px;
-  top: 435px;
+  top: 439px;
   right: 0px;
 }
 .btn-side-body{
@@ -192,7 +195,7 @@ canvas {
   position: absolute;
   width: 150px;
   padding: 5px;
-  top: 435px;
+  top: 439px;
   right: 16px;
 }
 .btn-side-menu-sm {
