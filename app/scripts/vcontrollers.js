@@ -28,7 +28,7 @@ arrControllers.V1Controller = function ($scope, $interval, $state, $sce) {
         ],
         theme: "bower_components/videogular-themes-default/videogular.css",
         plugins: {
-            poster: "http://www.videogular.com/assets/images/videogular.png"
+            poster: "images/blank.png"
         },
         autoPlay: true
     };
@@ -62,7 +62,7 @@ arrControllers.V2Controller = function ($scope, $interval, $state, $sce) {
         ],
         theme: "bower_components/videogular-themes-default/videogular.css",
         plugins: {
-            poster: "http://www.videogular.com/assets/images/videogular.png"
+            poster: "images/blank.png"
         },
         autoPlay: true
     };
@@ -94,7 +94,7 @@ arrControllers.V3Controller = function ($scope, $interval, $state, $sce) {
         ],
         theme: "bower_components/videogular-themes-default/videogular.css",
         plugins: {
-            poster: "http://www.videogular.com/assets/images/videogular.png"
+            poster: "images/blank.png"
         },
         autoPlay: true
     };
@@ -126,7 +126,7 @@ arrControllers.V4Controller = function ($scope, $interval, $state, $sce) {
         ],
         theme: "bower_components/videogular-themes-default/videogular.css",
         plugins: {
-            poster: "http://www.videogular.com/assets/images/videogular.png"
+            poster: "images/blank.png"
         },
         autoPlay: true
     };

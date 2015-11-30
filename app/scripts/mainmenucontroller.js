@@ -26,7 +26,7 @@ arrControllers.MainMenuController = function($scope, $state, $sce, $rootScope) {
         ],
         theme: "bower_components/videogular-themes-default/videogular.css",
         plugins: {
-            poster: "http://www.videogular.com/assets/images/videogular.png"
+            poster: "images/blank.png"
         },
         autoPlay: true
     };
