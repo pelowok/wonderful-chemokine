@@ -53,10 +53,10 @@ arrControllers.MainMenuController = function($scope, $state, $sce, $rootScope) {
     };
 
     $scope.btnImg = [
-        { btn: 'mm_s1', img: '/images/blank.png', state: 'c1.tranz' },
-        { btn: 'mm_s2', img: '/images/blank.png', state: 'c2.tranz' },
-        { btn: 'mm_s3', img: '/images/blank.png', state: 'c3.tranz' },
-        { btn: 'mm_s4', img: '/images/blank.png', state: 'c4.tranz' }
+        { btn: 'mm_s1', img: 'images/blank.png', state: 'c1.tranz' },
+        { btn: 'mm_s2', img: 'images/blank.png', state: 'c2.tranz' },
+        { btn: 'mm_s3', img: 'images/blank.png', state: 'c3.tranz' },
+        { btn: 'mm_s4', img: 'images/blank.png', state: 'c4.tranz' }
     ];
 
     $scope.navTo = function(state){
