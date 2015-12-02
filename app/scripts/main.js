@@ -4,6 +4,8 @@
 
 'use strict';
 
+var console = { log: function() {} };
+
 var infiApp = angular.module('infiApp', ['ngSanitize', 'ngTouch', 'ngAnimate', 'ui.router', 'com.2fdevs.videogular', 'com.2fdevs.videogular.plugins.controls', 'com.2fdevs.videogular.plugins.overlayplay', 'com.2fdevs.videogular.plugins.poster', 'com.2fdevs.videogular.plugins.buffering']);
 
 infiApp.config(function ($stateProvider, $urlRouterProvider) {
